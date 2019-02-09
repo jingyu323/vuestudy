@@ -65,6 +65,10 @@
         <a v-on:click="doSomething">点事件</a>
       </li>
     </ul>
+
+   prame  is  {{this.$route.params.id}} <br>
+
+    query is  {{this.$route.query.id}}
   </div>
 </template>
 
