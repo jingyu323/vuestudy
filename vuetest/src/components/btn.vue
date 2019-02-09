@@ -5,10 +5,12 @@
     <button @click = "goback()">返回</button> <br>
     <button @click = "paramBack()">params 方式跳转</button> <br>
     <button @click = "queryBack()">query 方式跳转</button>
+    <mycomponent></mycomponent>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: 'Btn1',
   data () {
@@ -29,6 +31,15 @@ export default {
     }
   }
 }
+
+Vue.component('mycomponent', {
+  template: `<div>{{ message }}这是一个自定义组件</div>`,
+  data () {
+    return {
+      message: '自定义组件 msg   '
+    }
+  }
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
