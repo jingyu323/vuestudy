@@ -4,12 +4,7 @@
     <h2>Essential Links</h2>
     <ul>
       <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
+        <p v-if="true">现在你看到我了</p>
       </li>
       <li>
         <a
@@ -64,20 +59,10 @@
         </a>
       </li>
       <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
+        <router-link to="/Btn">Go to Btn  router link </router-link>
       </li>
       <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
+        <a v-on:click="doSomething">点事件</a>
       </li>
     </ul>
   </div>
@@ -89,6 +74,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    doSomething: function () {
+      alert('doSomething')
     }
   }
 }
