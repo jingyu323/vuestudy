@@ -69,6 +69,8 @@
    prame  is  {{this.$route.params.id}} <br>
 
     query is  {{this.$route.query.id}}
+    <br>
+    <mycomponent></mycomponent>
   </div>
 </template>
 
