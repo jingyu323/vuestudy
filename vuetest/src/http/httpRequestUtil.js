@@ -1,6 +1,13 @@
 import axios from 'axios'
-import store from './store'
+// 全局引入
 
-function initAxios () { // 初始化配置
-  axios.defaults.baseURL = 'http://121.11.2012iot.com/'
+var axiosIns = axios.create({
+  baseURL: 'https://easy-mock.com/mock/5c67cb3fadf6a5499fb8d31e/vuetest',
+  timeout: 1000,
+  headers: {'X-Custom-Header': 'foobar'}
+})
+
+function initAxiosIns () {
+  return axiosIns
 }
+export default {initAxiosIns}

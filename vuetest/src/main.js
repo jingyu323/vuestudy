@@ -3,18 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// 全局引入
-import axios from 'axios'
-Vue.prototype.$http = axios
+import httpRequestUtils from './http/httpRequestUtil'
 
 Vue.config.productionTip = false
 
 // 初始化
-Vue.prototype.axiosIns = axios.create({
-  baseURL: 'https://easy-mock.com/mock/5c67cb3fadf6a5499fb8d31e/vuetest',
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
-})
+Vue.prototype.axiosIns = httpRequestUtils.initAxiosIns()
 
 /* eslint-disable no-new */
 new Vue({
