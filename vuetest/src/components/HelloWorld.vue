@@ -51,12 +51,7 @@
         </a>
       </li>
       <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
+        <router-link to="/axiosvue">Go toaxiosvue </router-link>
       </li>
       <li>
         <router-link to="/Btn">Go to Btn  router link </router-link>
