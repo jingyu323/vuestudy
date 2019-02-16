@@ -21,7 +21,7 @@ export default {
       window.history.back()
     },
     axiosvueGet: function () {
-      this.$http.get('https://easy-mock.com/mock/5c67cb3fadf6a5499fb8d31e/vuetest/query').then(function (response) {
+      this.axiosIns.get('/query').then(function (response) {
         console.log(response)
       }).catch(function (error) {
         console.log(error)
@@ -29,7 +29,7 @@ export default {
     },
     axiosvuePost: function () {
       // this.$router.push({name: '/order/page1', params: {id: '1'}})
-      this.$http.post('https://easy-mock.com/mock/5c67cb3fadf6a5499fb8d31e/vuetest/upload', {
+      this.axiosIns.post('/upload', {
         firstName: 'Fred',
         lastName: 'Flintstone'
       })

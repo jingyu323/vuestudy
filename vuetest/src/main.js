@@ -9,6 +9,13 @@ Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
+// 初始化
+Vue.prototype.axiosIns = axios.create({
+  baseURL: 'https://easy-mock.com/mock/5c67cb3fadf6a5499fb8d31e/vuetest',
+  timeout: 1000,
+  headers: {'X-Custom-Header': 'foobar'}
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
