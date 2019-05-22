@@ -58,6 +58,10 @@
       </li>
       <li>
         <a v-on:click="doSomething">点事件</a>
+        <a v-on:click="doeat">doeat</a>
+      </li>
+      <li>
+        <router-link to="/promisetest">promise test  </router-link>
       </li>
     </ul>
 
@@ -80,6 +84,37 @@ export default {
   methods: {
     doSomething: function () {
       alert('doSomething')
+    },
+    cook: function () {
+      console.log('开始做饭。')
+      var p = new Promise(function (resolve, reject) { // 做一些异步操作
+        setTimeout(function () {
+          console.log('做饭完毕！')
+          resolve('鸡蛋炒饭')
+        }, 1000)
+      })
+      return p
+    },
+    eat: function () {
+      console.log('开始吃饭。')
+      var p = new Promise(function (resolve, reject) { // 做一些异步操作
+        setTimeout(function () {
+          console.log('吃饭完毕!')
+          resolve('一块碗和一双筷子')
+        }, 2000)
+      })
+      return p
+    },
+    doeat: function () {
+      let _this = this
+      _this.$options.methods.cook()
+        .then(function (data) {
+          // throw new Error('米饭被打翻了！')
+          _this.$options.methods.eat(data)
+        })
+        .catch(function (data) {
+          console.log(data)
+        })
     }
   }
 }

@@ -5,10 +5,10 @@ import App from './App'
 import router from './router'
 import httpRequestUtils from './http/httpRequestUtil'
 
-Vue.config.productionTip = false
-
-// 初始化
+// 初始化axios对象 并且添加的Vue全局属性中
 Vue.prototype.axiosIns = httpRequestUtils.initAxiosIns()
+
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
