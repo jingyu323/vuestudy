@@ -13,16 +13,24 @@
 </body>
 
 <script>
-    const x0 = 231 / 2 * 2 // 圆心坐标
-    const y0 = 231 / 2 * 2 // 圆心坐标
+    /**
+     * 	圆的中心的 x 坐标。
+     y	圆的中心的 y 坐标。
+     r	圆的半径。
+     sAngle	起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
+     eAngle	结束角，以弧度计。
+     counterclockwise	可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
+     * @type {number}
+     */
+    const x0 = 231  // 圆心坐标
+    const y0 = 231  // 圆心坐标
     const r1 = (231 / 2 - 16) * 2 // 外圆半径
-    const r2 = (231 / 2 - 25) * 2 // 内圆半径
-    const startAng = 135 // 起始角度
-    const endAng = 45 // 终点角度
+    const r2 = (231 / 2 - 65) * 2 // 内圆半径
+    const startAng = 180 // 起始角度
+    const endAng = 0// 终点角度
 
     function getPointX(r, ao) {
         return x0 + r * Math.cos(ao * Math.PI / 180)
-
     }
 
     function getPointY(r, ao) {
@@ -51,10 +59,13 @@
     // 边界圆上的半径
     let r3 = (r1 - r2) / 2
 
+
+    const start_jiadu = 180 +45// 起始角度
+
     // ---------2 画小圆与校园两个边界的的左侧圆------------
-    ctx.moveTo(x2, y2)
-    ctx.arc(x3, y3, r3, (Math.PI/180)*315, (Math.PI/180)*startAng, false);
-    ctx.stroke();
+    // ctx.moveTo(x2, y2)
+    // ctx.arc(x3, y3, r3, (Math.PI/180)*315, (Math.PI/180)*startAng, false);
+    // ctx.stroke();
 
     // ---------3 画小圆-----------
     ctx.moveTo(x2, y2)
@@ -76,8 +87,8 @@
 
     // ---------2 画小圆与校园两个边界的的左侧圆------------
     ctx.moveTo(xx1, yy1)
-    ctx.arc(xx3, yy3, rr3, (Math.PI/180)*45, (Math.PI/180)*235, false);
-    ctx.stroke();
+    // ctx.arc(xx3, yy3, rr3, (Math.PI/180)*45, (Math.PI/180)*235, false);
+    // ctx.stroke();
     ctx.closePath()
     ctx.fillStyle="green";
     //  ctx.fill()
