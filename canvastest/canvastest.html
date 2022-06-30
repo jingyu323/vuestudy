@@ -20,6 +20,12 @@
      sAngle	起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
      eAngle	结束角，以弧度计。
      counterclockwise	可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
+
+     如果已知两个点之间的距离怎么算角度？
+     比如说距离为x
+     x*2/Math.PI/r/360
+     也就是整理  周长/360*距离就是对应的角度
+
      * @type {number}
      */
     const x0 = 231  // 圆心坐标
@@ -60,7 +66,10 @@
     let r3 = (r1 - r2) / 2
 
 
-    const start_jiadu = 180 +45// 起始角度
+    const start_jiadu = 225// 起始角度
+
+    ssx = this.getPointX(r3, start_jiadu)
+    ssy = this.getPointY(r3, start_jiadu)
 
     // ---------2 画小圆与校园两个边界的的左侧圆------------
     // ctx.moveTo(x2, y2)
