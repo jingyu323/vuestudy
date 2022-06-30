@@ -20,37 +20,29 @@
      sAngle	起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
      eAngle	结束角，以弧度计。
      counterclockwise	可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
-
+	 
 	 		 ctx.lineTo(lineEndX,lineEndY);
 		  ctx.lineTo(angEndX,angEndY);
-		   ctx.fill();
-
+		   ctx.fill(); 
+	 
 	  // 线条末端线帽的设置为圆形
             ctx.lineCap = 'round';
-
-
+			
+			
 				let differ =  4.6/2/Math.PI/ange3*360
-
-				ctx.fillText("textAlign=center",150,120); 实心字体
-				ctx.strokeText("Sample String", x0-text.width/2, y0-30) 空心字体
-
      * @type {number}
      */
-
+	 
 	  var canvas = document.getElementById('mycanvas');
     const x0 = canvas.width/2;  // 圆心坐标
     const y0 = canvas.height;  // 圆心坐标
     const r1 = (x0 / 2 - 16) * 2 // 外圆半径
     const r2 = (x0 / 2 - 30) * 2 // 内圆半径
 	const ange3 = (x0 / 2 - 20) * 2 // 线段终止的地方
-    const startAng = 180; // 起始角度
-	const curSpeedTex ="实时速率（Mbps）";
-
-	let  curSpeed =  Math.floor(Math.random()  *3500);
-
-	const maxSpeed =3500;
-
-	let targetAng = curSpeed/maxSpeed*180+startAng; // 起始角度
+    const startAng = 180 // 起始角度
+    const endAng = 0// 终点角度
+	
+	const targetAng = 120+startAng; // 起始角度
 
     function getPointX(r, ao) {
         return x0 + r * Math.cos(ao * Math.PI / 180)
@@ -60,23 +52,71 @@
         return y0 + r * Math.sin(ao * Math.PI / 180)
     }
 
-
+   
     var ctx = canvas.getContext("2d");
     ctx.beginPath();
 	 var img = new Image();//创建img元素
 	 img.onload = function(){
 					// 参数 1：要绘制的 img   参数 2、3：绘制的 img 在 canvas 中的坐标 参数4,5是width，height
      console.log("img.width="+img.width+",img1.height="+img.height);
-					ctx.drawImage(img,0,0,img.width,img.height);
+					ctx.drawImage(img,0,0,img.width,img.height); 
 				}
+        
+        
 
-	img.src = 'yibiaopan.png';//设置图片源地址
+				img.src = 'yibiaopan.png';//设置图片源地址
 
+    // ---------1 画大圆------------
+
+    // 获取大圆上的点 与 边界圆交点
+    let x1 = this.getPointX(r1, startAng)
+    let y1 = this.getPointY(r1, startAng)
+    // 获取小圆上的点  与 边界圆交点
+    let x2 = this.getPointX(r2, startAng)
+    let y2 = this.getPointY(r2, startAng)
+    // 边界圆上的圆心
+    let x3 = (x2 - x1) / 2 + x1
+    let y3 = (y1 - y2) / 2 + y2
+    // 边界圆上的半径
+    let r3 = (r1 - r2) / 2
+
+
+    const start_jiadu = 225// 起始角度
+
+    ssx = this.getPointX(r3, start_jiadu)
+    ssy = this.getPointY(r3, start_jiadu)
+
+    // ---------2 画小圆与校园两个边界的的左侧圆------------
+    // ctx.moveTo(x2, y2)
+    // ctx.arc(x3, y3, r3, (Math.PI/180)*315, (Math.PI/180)*startAng, false);
+    // ctx.stroke();
+
+    // ---------3 画小圆-----------
+
+
+
+    // 获取大圆上的点 与 边界圆交点
+    let xx1 = this.getPointX(r1, endAng)
+    let yy1 = this.getPointY(r1, endAng)
+    // 获取小圆上的点  与 边界圆交点
+    let xx2 = this.getPointX(r2, endAng)
+    let yy2 = this.getPointY(r2, endAng)
+    // 边界圆上的圆心
+    let xx3 = (xx1 - xx2) / 2 + xx2
+    let yy3 = (yy1 - yy2) / 2 + y2
+    // 边界圆上的半径
+    let rr3 = (r1 - r2) / 2
+
+    // ---------2 画小圆与校园两个边界的的左侧圆------------
+    ctx.moveTo(xx1, yy1)
+    // ctx.arc(xx3, yy3, rr3, (Math.PI/180)*45, (Math.PI/180)*235, false);
+    // ctx.stroke();
+    ctx.closePath()
     ctx.fillStyle="#FEB95A";
-
-
-
-
+    //  ctx.fill()
+	
+ 
+	
 	    // 获取大圆上的点 与 边界圆交点
     let lineStartX = this.getPointX(r2,  targetAng);
     let lineStartY = this.getPointY(r2, targetAng);
@@ -92,52 +132,28 @@
      ctx.strokeStyle = '#FEB95A';
 	 ctx.lineTo(angX,angY);
 	 ctx.stroke();
-
-		// 根据线的宽度确定小三角的开始坐标的偏移角度
+	 
 		let differ =  2.8/2/Math.PI/ange3*360
-
-
-		let angStartX = this.getPointX(ange3,  targetAng-differ);
+		
+ 
+		let angStartX = this.getPointX(ange3,  targetAng-differ);  
 		let angStartY = this.getPointY(ange3, targetAng-differ);;
-
+	 
 		let angEndX = this.getPointX(ange3,  targetAng+differ);
 		let angEndY = this.getPointY(ange3, targetAng+differ)	;
 		ctx.moveTo(angStartX, angStartY);
 		ctx.lineWidth = 1;
-		ctx.lineTo(lineEndX,lineEndY);
-		ctx.lineTo(angEndX,angEndY);
-		ctx.fill();
+		 ctx.lineTo(lineEndX,lineEndY);
+		  ctx.lineTo(angEndX,angEndY);
+		   ctx.fill(); 
 		ctx.stroke();
-		ctx.strokeStyle = '#FEB95A';
-		ctx.save();
-		ctx.fillStyle="#00FFDC";
-		// 写文字
-		 ctx.font = "28px Verdana"
-
-
-		var text = ctx.measureText(curSpeed)
-		console.log("text="+text.width+",text.height"+text.height);
-		ctx.fillText(curSpeed,x0-text.width/2, y0-45);
-		ctx.restore();
-		ctx.fillStyle="#FFF";
-		 ctx.font = "16px Verdana"
-		// 实时速率的文字
-		var curspeed_text = ctx.measureText(curSpeedTex);
-		ctx.fillText(curSpeedTex,x0-curspeed_text.width/2, y0-14);
-
-
-
-		ctx.closePath();
-
+	  ctx.closePath();
+	
 
 
 </script>
 
 <style>
-.mycanvas{
-
-background-color:#232228;
-}
 </style>
 
 </html>
