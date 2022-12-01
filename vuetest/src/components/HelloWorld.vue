@@ -36,8 +36,12 @@
           href="http://vuejs-templates.github.io/webpack/"
           target="_blank"
         >
-          Docs for This Template
+          Docs for This Template 嗡嗡嗡呃
         </a>
+      </li>
+
+      <li>
+        <router-link to="/echartdot">dot test </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>

@@ -5,6 +5,8 @@ import Btn from '@/components/btn'
 import axiosvue from '@/components/axios'
 import promisetest from '@/components/promisetest'
 
+import echartdot from '@/components/echartdot'
+
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +30,11 @@ export default new Router({
       path: '/promisetest',
       name: 'promisetest',
       component: promisetest
+    },
+    {
+      path: '/echartdot',
+      name: 'echartdot',
+      component: echartdot
     }
   ]
 })

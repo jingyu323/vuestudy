@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>五分钟上手之散点图</title>
+        <!-- 引入 echarts.js -->
+        <script src="js/echarts.js"></script>
+        <script src="js/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div style="height: 500px;width: 1000px;" id="Scatter"></div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var MyScatter = echarts.init(document.getElementById('Scatter'));
+
+                var data = [
+                    ['2017-03-01 01:01:01',
+                        1,
+                        "翻身"
+                    ],
+					['2017-03-01 01:16:01',
+                        1,
+                        "翻身"
+                    ],
+                    [
+                        '2017-04-01',
+                        0.5,
+                        "没翻身"
+                    ],
+                    [
+                        '2017-03-02',
+                        0.5,
+                        "翻身"
+                    ],
+					[
+                        '2017-03-03',
+                        0.5,
+                        "翻身"
+                    ],
+					['2017-04-09',
+                        1,
+                        "翻身"
+                    ],
+                ];
+                var textStyle = {
+                    color: '#333',
+                    fontStyle: 'normal',
+                    fontWeight: 'normal',
+                    fontFamily: '微软雅黑',
+                    fontSize: 14,
+                };
+                option = {
+                    xAxis: {
+                        type: 'time',
+                        name: '时间轴',
+
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: '次数值',
+
+                        max: 1,
+                        min: 0,
+                    },
+                    series: [{
+                        name: '',
+                        data: data,
+                        type: 'scatter',
+                        symbolSize: 10
+                    }]
+                };
+
+                MyScatter.setOption(option);
+            });
+        </script>
+    </body>
+</html>
