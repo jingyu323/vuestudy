@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#cvs {
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id='container'>
+		<canvas id='cvs'>
+			sorry, your browser doesn't support canvas API.
+		</canvas>
+	</div>
+</body>
+<script>
+	window.onload = function() {
+		// 获取画布
+		const cvs = document.querySelector('#cvs')
+		cvs.width = 800
+		cvs.height = 600
+		// 获取画笔
+		const ctx = cvs.getContext('2d')
+
+		for(let i = 0; i < 11; i++) {
+			ctx.save()
+			ctx.translate(500, 300) //要先用translate()再用rotate()。
+			ctx.rotate(36 * i * Math.PI / 180)  //rotate()方法要放在绘制图形之前。
+			ctx.bezierCurveTo(30, 50, 350, 550, 100, 150)
+			ctx.fillStyle = 'rgba(255, 0, 255, 0.25)'
+			ctx.fill()
+			ctx.restore()
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,15 @@
+<body>
+ <!--创建一个边长为200的正方形画布-->
+ <canvas id="mc" width="200" height="200" style="border:1px solid black"></canvas>
+ 
+ <script type="text/javascript">
+     var canvas = document.getElementById('mc'); //获取Canvas元素对应的DOM对象
+     var ctx = canvas.getContext('2d');//获取Canvas上的绘图的CanvasRenderingContext2D对象
+      ctx.beginPath();
+ 
+	var hudu= 1.5-Math.PI;
+	  ctx.arc(100,100,90,hudu,0 ,false);
+	ctx.stroke();
+
+ </script>
+ </body>
