@@ -62,7 +62,212 @@ option = {
   color: [],    //颜色
   backgroundColor: '',  //背景色
   darkMode: '',  //是否是暗黑模式
-  dataZoom: [],    // 
+ /有值的都可视为默认值/
+dataZoom: [
+  {
+    type: 'inside', // 类型, inside表示鼠标滚动进行缩放
+    id: '', 
+    disabled: false, // 是否停止组件的功能
+    xAxisIndex: '', // 组件控制的 x轴, 默认全部
+    yAxisIndex: '', // 组件控制的 y轴
+    singleAxisIndex: singleAxisIndexArr,// scatter 散点模式下多个轴的情况下设置之后能控制多个轴
+    radiusAxisIndex: '', // 组件控制的 radius轴
+    angleAxisIndex: '', // 组件控制的 angle轴
+    filterMode: '', // 可选值filter/weakFilter/empty/none，详解如下
+    start: 100, // 数据窗口范围的起始百分比。范围是：0~100, 表示0%~100%同下 ,控制缩放的开始位置
+    end: 100, // 数据窗口范围的结束百分比。范围是：0~100，大小可以解决数据挤在一起的问题
+    startValue: '', // 范围的起始数值，若设置了inside.start则失效
+    endValue: '', // 范围的结束数值，若设置了inside.end则失效
+    minSpan: 100, // 限制窗口大小的最小值（百分比值），取值范围是0~100，设置inside.minValueSpan则失效
+    maxSpan: 100, // 限制窗口大小的最小值（百分比值），取值范围是0~100，设置inside.maxValueSpan则失效
+    minValueSpan: '', // 用于限制窗口大小的最小值, 若时间轴上可设置为：3600*24*1000*5[时间轴接收的都是时间戳]表示5天,  在类目轴上可以设置为5表示5个类目
+    maxValueSpan: '', // 用于限制窗口大小的最大值，用法同上
+    orient: '', // 布局方式是横还是竖，可选值horizontal[水平]/vertical[竖直]
+    zoomLock: false, // 是否锁定选择区域的大小，若设置为true则锁定选择区域的大小，也就是说，只能平移，不能缩放
+    throttle: 100, // 设置触发视图刷新的频率。单位为毫秒（ms）
+    rangeMode: '', // 详解如下
+    zoomOnMouseWheel: true, // 触发方式, 可选值true[直接鼠标滚轮触发，默认]/false[滚轮不能触发]/shift[按住shift和滚轮触发]/ctrl[参考shift]/alt[参考shift]
+    moveOnMouseMove: true, // 触发数据窗口平移方式，可选值参考zoomOnMouseWheel
+    moveOnMouseWheel: true, // 触发数据窗口平移方式，可选值参考zoomOnMouseWheel
+    preventDefaultMouseMove: true // 是否阻止mousemove事件的默认行为。
+  }, {
+    type: 'slider', // 类型, slider表示滑动条进行缩放
+    id: '',
+    show: true, //是否显示组件, 若设置为false，不显示组件，但数据过滤功能还存在
+    backgroundColor: 'rgba(47,69,84,0)', // 组件的背景颜色
+    // 数据阴影的样式
+    dataBackground: {
+      // 阴影线条样式
+      lineStyle: {
+        color: '#d2dbee',
+        width: 0.5,
+        type: 'solid', // 可选值solid/solid/dotted
+        dashOffset: 0, // 设置虚线的偏移量
+        cap: 'butt', // 指定线段末端绘制方式，可选值butt[方形结束]/round[圆形结束]/square[以方形结束，但增加了一个宽度和线段相同，高度是线段厚度一半的矩形区域]
+        join: 'bevel',
+        miterLimit: 10,
+        shadowBlur: 10, // 模糊大小
+        shadowColor: 'rgba(0, 0, 0, 0.5)', //阴影颜色
+        shadowOffsetX: 0 , //阴影水平方向上的偏移距离
+        shadowOffsetY: 0 , //阴影垂直方向上的偏移距离
+        opacity: 1
+      },
+      //阴影的填充样式
+      areaStyle: {
+        color: 'd2dbee',
+        shadowBlur: 10,
+        shadowColor: 'rgba(0, 0, 0, 0.5)',
+        shadowOffsetX: 0 ,
+        shadowOffsetY: 0 ,
+        opacity: 0.2
+      }
+    }, 
+    //选中部分数据阴影的样式
+    selectedDataBackground: {
+      lineStyle: {}, //同上dataBackground，选中部分阴影的线条样式
+      areaStyle: {}, //同上dataBackground，选中部分阴影的填充样式
+    },
+    fillerColor: '', // rgba(167,183,204,0.4)
+    borderColor: '#ddd', // #ddd
+    handleIcon: '', // 
+    handleSize: '100%', // 
+    //两侧缩放手柄的样式配置
+    handleStyle: {
+      color: '#fff', //图形颜色
+      borderColor: '#ACB8D1', //图形描边颜色
+      borderWidth: 0, //描边线宽
+      borderType: 'solid', //描边类型，可选类型solid/dashed/dotted/number数字/[number, number]数组
+      borderDashOffset: 0, //设置虚线的偏移量, 可搭配borderType指定dash array实现灵活的虚线效果
+      borderCap: 'butt', //指定线段末端的绘制方式，可选值butt[方形结束]/round[圆形结束]/square[以方形结束，增加了一个宽度和线段相同，高度是线段厚度一半的矩形区域]
+      borderJoin: 'bevel', //设置2个长度不为0的相连部分如何连接在一起，可选值bevel/round/miter
+      borderMiterLimit: 10 , //设置斜接面限制比例, 当borderJoin为miter时有效
+      shadowBlur: 10,
+      shadowColor: 'rgba(0, 0, 0, 0.5)',
+      shadowOffsetX: 0,
+      shadowOffsetY: 0,
+      opacity: 1
+    },
+    moveHandleIcon: '', //移动手柄中间的 icon
+    moveHandleSize: 7, //移动手柄的尺寸高度
+    //移动手柄的样式配置
+    moveHandleStyle: {
+      color: '#D2DBEE',
+      borderColor: '#000',
+      borderWidth: 0,
+      borderType: 'solid',
+      borderDashOffset: 0,
+      borderCap: 'butt',
+      borderJoin: 'bevel',
+      borderMiterLimit: 10,
+      shadowBlur: 10,
+      shadowColor: 'rgba(0, 0, 0, 0.5)',
+      shadowOffsetX: 0,
+      shadowOffsetY: 0,
+      opacity: 1
+    },
+    labelPrecision: 'auto', //显示label小数精度
+    labelFormatter: '', //显示label格式化器, 例labelFormatter: function (value) { return 'aaa' + value + 'bbb' }
+    showDetail: true, //是否显示detail，即拖拽时候显示详细数值信息
+    showDataShadow: 'auto', //是否在 dataZoom-silder 组件中显示数据阴影。数据阴影可以简单地反应数据走势
+    realtime: true, //拖动时，是否实时更新系列的视图。如果设置为 false，则只在拖拽结束的时候更新
+    textStyle: {
+      color: '#333', //文字颜色
+      fontStyle: 'normal', //文字字体风格, 可选值normal/italic/oblique
+      fontWeight: 'normal', //文字字体粗细, 可选值'normal/bold/bolder/lighter/100|200|300|400...
+      fontFamily: 'sans-serif',
+      fontSize: 12,
+      lineHeight: '',
+      width: '',
+      height: '',
+      textBorderColor: '', //文字本身描边颜色
+      textBorderWidth: '', //文字本身描边宽度
+      textBorderType: 'solid', //文字本身描边类型，可选类型solid/dashed/dotted/number数字/[number, number]数组
+      textBorderDashOffset: 0, //设置虚线的偏移量，可搭配textBorderType指定dash array实现灵活的虚线效果
+      textShadowColor: 'transparent', //文字本身阴影颜色
+      textShadowBlur: 0, //文字本身阴影长度
+      textShadowOffsetX: 0, //文字本身阴影X偏移
+      textShadowOffsetY: 0, //文字本身阴影Y偏移
+      overflow: 'none', //文字超出宽度是否截断或者换行。配置width时有效
+      ellipsis: '...' //在overflow配置为'truncate'的时候，可以通过该属性配置末尾显示的文本
+    },
+    xAxisIndex: '', // 同inside
+    yAxisIndex: '', // 同inside
+    radiusAxisIndex: '', // 同inside
+    angleAxisIndex: '', // 同inside
+    filterMode: 'filter', // 同inside
+    start: 100, // 同inside
+    end: 100, // 同inside
+    startValue: '', // 同inside
+    endValue: '', // 同inside
+    minSpan: 100, // 同inside
+    maxSpan: 100, // 同inside
+    minValueSpan: '', // 同inside
+    maxValueSpan: '', // 同inside
+    orient: '', // 同inside
+    zoomLock: false, // 同inside
+    throttle: 100, // 同inside
+    rangeMode: '', // 同inside, 详解如下
+    zlevel: 0, // 所有图形的zlevel值
+    z: 2,
+    left: 'auto', //dataZoom-slider组件离容器左侧距离
+    top: '', //dataZoom-slider组件离容器上侧距离
+    right: '', //dataZoom-slider组件离容器右侧距离
+    bottom: '', //dataZoom-slider组件离容器下侧距离
+    width: '', //dataZoom-slider组件的宽度。竖直布局默认30px，水平布局默认自适应。比left和right优先级高
+    height: '', //dataZoom-slider组件的高度。水平布局默认30px，竖直布局默认自适应。比top和bottom优先级高。
+    brushSelect: true, //是否开启刷选功能
+    //刷选框样式设置
+    brushStyle: {
+      color: 'rgba(135,175,274,0.15)',
+      borderColor: '#000',
+      borderWidth: 0,
+      borderType: 'solid',
+      borderDashOffset: 0,
+      borderCap: 'butt',
+      borderJoin: 'bevel',
+      borderMiterLimit: 10,
+      shadowBlur: 10,
+      shadowColor: 'rgba(0, 0, 0, 0.5)',
+      shadowOffsetX: 0,
+      shadowOffsetY: 0,
+      opacity: 1,
+    },
+    //高亮样式设置
+    emphasis: {
+      handleStyle: {
+        color: 自适应,
+        borderColor: '#000',
+        borderWidth: 0,
+        borderType: 'solid',
+        borderDashOffset: 0,
+        borderCap: 'butt',
+        borderJoin: 'bevel',
+        borderMiterLimit: 10,
+        shadowBlur: 10,
+        shadowColor: 'rgba(0, 0, 0, 0.5)',
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        opacity: 1
+      },
+      moveHandleStyle: {
+        color: 自适应,
+        borderColor: '#000',
+        borderWidth: 0,
+        borderType: 'solid',
+        borderDashOffset: 0,
+        borderCap: 'butt',
+        borderJoin: 'bevel',
+        borderMiterLimit: 10,
+        shadowBlur: 10,
+        shadowColor: 'rgba(0, 0, 0, 0.5)',
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        opacity: 1
+      }
+    }
+  }
+],
+
   dataset: [{}],     //数据集合
   toolbox: {},    // 
   tooltip: {},    //提示框
