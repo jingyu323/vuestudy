@@ -22,33 +22,47 @@ export default {
     };
   },
   methods: {
-    goback: function() {
+    goback: function () {
       window.history.back();
     },
     // getMap:function (mapName) {
     // 	let cityName = mapDict[mapName]
     // 	if(cityName){
-    // 		return [cityName, mapData[cityName]]
+    // 		return [cityName,mapData[cityName]]
     // 	}
-    // 	return ['china', china]
+    // 	return ['china',china]
     // },
-    dotChart: function() {
+    randomData: function () {
+      return Math.round(Math.random() * 500);
+    },
+    dotChart: function () {
+
+      var mydata = [
+        { name: '北京', value: '100' }, { name: '天津', value: this.randomData() },
+      ];
       console.log("ssss" + beijing);
       //  var echarts = require('echarts');
       var myChart = echarts.init(document.getElementById("container"));
       this.axiosIns
         .get("/static/china.json?time=" + new Date().getTime())
-        .then(function(geoJson) {
+        .then(function (geoJson) {
           const option = {
             // 背景颜色
             backgroundColor: "#404a59",
+            grid: {
+              top: 50,  // 设置图表位置
+
+              left: '45%',
+
+              width: '35%' // 设置图表宽度
+            },
             // 提示浮窗样式
             tooltip: {
               show: true,
               trigger: "item",
               alwaysShowContent: false,
               backgroundColor: "#0C121C",
-              borderColor: "rgba(0, 0, 0, 0.16);",
+              borderColor: "rgba(0,0,0,0.16);",
               hideDelay: 100,
               triggerOn: "mousemove",
               enterable: true,
@@ -90,7 +104,7 @@ export default {
                   style: {
                     fill: "#ddd",
                     text: "Create By Rain",
-                    font: 'bolder 1.5rem "Microsoft YaHei", sans-serif'
+                    font: 'bolder 1.5rem "Microsoft YaHei",sans-serif'
                   }
                 }
               ]
@@ -128,10 +142,10 @@ export default {
                 ]
               },
               //字体颜色
-            //   textStyle: {
-            //     color: "#fff",
-            //     map: "china"
-            //   }
+              textStyle: {
+                // color: "#fff",
+                // map: "china"
+              }
             },
             series: [
               {
@@ -146,7 +160,7 @@ export default {
                   formatter(value) {
                     return value.data.value[2];
                   },
-                //   color: "#fff"
+                  //   color: "#fff"
                 },
                 // 标志的样式
                 itemStyle: {
@@ -162,6 +176,7 @@ export default {
                   { name: "西藏", value: [91.23, 29.5, 2333] },
                   { name: "黑龙江", value: [128.03, 47.01, 1007] }
                 ],
+                // data:mydata,
                 showEffectOn: "render",
                 rippleEffect: {
                   brushType: "stroke"
@@ -169,89 +184,66 @@ export default {
                 hoverAnimation: true,
                 zlevel: 1
               },
-              
-              // {
-              //   type: "effectScatter",
-              //   coordinateSystem: "geo",
-              //   effectType: "ripple",
-              //   showEffectOn: "render",
-              //   rippleEffect: {
-              //     period: 10,
-              //     scale: 10,
-              //     brushType: "fill",
-              //   },
-
-              //   hoverAnimation: true,
-              //   itemStyle: {
-              //     normal: {
-              //       color: "rgba(255, 235, 59, .7)",
-              //       shadowBlur: 10,
-              //       shadowColor: "#333",
-              //     },
-              //   },
-              //   zlevel: 1,
-              //   data: [
-              //     { name: "西藏", value: [91.23, 29.5, 2333] },
-              //     { name: "黑龙江", value: [128.03, 47.01, 1007] },
-              //   ],
-              // },
-			  {
-				type: "map",
-				map: "china",
-              	label: {
-                // 通常状态下的样式
-                normal: {
-                  show: true,
-                  textStyle: {
-                    color: "#fff"
-                  }
-                },
-                // 鼠标放上去的样式
-                emphasis: {
-                  textStyle: {
-                    color: "#fff"
-                  }
-                }
-              },
-              // 地图区域的样式设置
-              itemStyle: {
-                normal: {
-                  borderColor: "rgba(147, 235, 248, 1)",
-                  borderWidth: 1,
-                  areaColor: {
-                    type: "radial",
-                    x: 0.5,
-                    y: 0.5,
-                    r: 0.8,
-                    colorStops: [
-                      {
-                        offset: 0,
-                        color: "rgba(147, 235, 248, 0)" // 0% 处的颜色
-                      },
-                      {
-                        offset: 1,
-                        color: "rgba(147, 235, 248, .2)" // 100% 处的颜色
-                      }
-                    ],
-                    globalCoord: false // 缺省为 false
+              {
+                name: '中国',
+                type: 'map',
+                mapType: 'china',
+                aspectScale: 0.85,  //地图长度比
+                label: {
+                  // 通常状态下的样式
+                  normal: {
+                    show: true,
+                    textStyle: {
+                      color: "#fff"
+                    }
                   },
-                  shadowColor: "rgba(128, 217, 248, 1)",
-                  shadowOffsetX: -2,
-                  shadowOffsetY: 2,
-                  shadowBlur: 10
+                  // 鼠标放上去的样式
+                  emphasis: {
+                    textStyle: {
+                      color: "#fff"
+                    }
+                  }
                 },
-                // 鼠标放上去高亮的样式
-                emphasis: {
-                  areaColor: "#389BB7",
-                  borderWidth: 0
-                }
-              },
-			                  data: [
-                  { name: "西藏", value: [91.23, 29.5, 2333] },
-                  { name: "黑龙江", value: [128.03, 47.01, 1007] },
-                ],
-
-			  }
+                // 地图区域的样式设置
+                itemStyle: {
+                  normal: {
+                    borderColor: "rgba(147,235,248,1)",
+                    borderWidth: 1,
+                    areaColor: {
+                      type: "radial",
+                      x: 0.5,
+                      y: 0.5,
+                      r: 0.8,
+                      colorStops: [
+                        {
+                          offset: 0,
+                          color: "rgba(147,235,248,0)" // 0% 处的颜色
+                        },
+                        {
+                          offset: 1,
+                          color: "rgba(147,235,248,.2)" // 100% 处的颜色
+                        }
+                      ],
+                      globalCoord: false // 缺省为 false
+                    },
+                    shadowColor: "rgba(128,217,248,1)",
+                    shadowOffsetX: -2,
+                    shadowOffsetY: 2,
+                    shadowBlur: 10
+                  },
+                  // 鼠标放上去高亮的样式
+                  emphasis: {
+                    areaColor: "#389BB7",
+                    borderWidth: 0
+                  }
+                }, data: [
+                  { name: '北京市', value: 17000 },
+                  { name: '天津市', value: 1000 },
+                  { name: '陕西省', value: 5000 },
+                  { name: '山西省', value: 3000 },
+                  { name: '湖南省', value: 2000 },
+                ]
+              }
             ],
 
             // 地图配置
@@ -275,7 +267,7 @@ export default {
               // 地图区域的样式设置
               itemStyle: {
                 normal: {
-                  borderColor: "rgba(147, 235, 248, 1)",
+                  borderColor: "rgba(147,235,248,1)",
                   borderWidth: 1,
                   areaColor: {
                     type: "radial",
@@ -285,16 +277,16 @@ export default {
                     colorStops: [
                       {
                         offset: 0,
-                        color: "rgba(147, 235, 248, 0)" // 0% 处的颜色
+                        color: "rgba(147,235,248,0)" // 0% 处的颜色
                       },
                       {
                         offset: 1,
-                        color: "rgba(147, 235, 248, .2)" // 100% 处的颜色
+                        color: "rgba(147,235,248,.2)" // 100% 处的颜色
                       }
                     ],
                     globalCoord: false // 缺省为 false
                   },
-                  shadowColor: "rgba(128, 217, 248, 1)",
+                  shadowColor: "rgba(128,217,248,1)",
                   shadowOffsetX: -2,
                   shadowOffsetY: 2,
                   shadowBlur: 10
@@ -370,14 +362,17 @@ h1,
 h2 {
   font-weight: normal;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }

@@ -64,7 +64,7 @@ export default {
 		                    }
 		                }
 		            },
-					itemStyle: {
+					      itemStyle: {
                     normal: {
                         areaColor: "#040c3c", //地图本身的颜色
                         borderColor: "#00feda", //省份边框颜色
