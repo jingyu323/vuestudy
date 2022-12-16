@@ -169,30 +169,7 @@ export default {
                 hoverAnimation: true,
                 zlevel: 1
               },
-              {
-                type: "map",
-                map: "china",
-                label: {
-                  // 通常状态下的样式
-                //   normal: {
-                //     show: true,
-                //     textStyle: {
-                //       color: "#fff"
-                //     }
-                //   },
-                  // 鼠标放上去的样式
-                //   emphasis: {
-                //     textStyle: {
-                //       color: "#fff"
-                //     }
-                //   },
-				  
-				  data: [
-                  { name: "西藏", value: [91.23, 29.5, 2333] },
-                  { name: "黑龙江", value: [128.03, 47.01, 1007] }
-                ],
-                }
-              }
+              
               // {
               //   type: "effectScatter",
               //   coordinateSystem: "geo",
