@@ -41,3 +41,5 @@ import * as echarts from 'echarts';
 
 vue4 
 import   echarts from 'echarts';
+示例
+https://blog.csdn.net/weixin_55181759/category_11824935.html
