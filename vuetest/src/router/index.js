@@ -8,6 +8,7 @@ import promisetest from '@/components/promisetest'
 import echartdot from '@/components/echartdot'
 import echartdotMap from '@/components/echartdotMap'
 import echartdotSingleAxiz from '@/components/echartdotSingleAxiz'
+import echartdAiq from '@/components/echartdAiq'
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/echartdotSingleAxiz',
       name: 'echartdotSingleAxiz',
       component: echartdotSingleAxiz
+    } ,
+    {
+      path: '/echartdAiq',
+      name: 'echartdAiq',
+      component: echartdAiq
     }
   ]
 })

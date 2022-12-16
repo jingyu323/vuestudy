@@ -1,7 +1,7 @@
 /* eslint-disable */ 
 <template>
   <div  style="height:900px;">
-    <h2>dot  test   file </h2>
+    <h2>dot  single aix   file </h2>
     <button @click = "goback()">返回</button> 
     <div id="container" style="height: 100%"></div>
   </div>
