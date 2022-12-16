@@ -31,3 +31,13 @@ npm test
 npm install --save axios
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+# <!-- echarts -->
+npm install echarts --save
+
+vue5+ 
+import * as echarts from 'echarts';
+
+vue4 
+import   echarts from 'echarts';
