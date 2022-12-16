@@ -26,12 +26,12 @@ export default {
       	var myChart = echarts.init(document.getElementById('container'));
         this.axiosIns.get('/static/china.json?time='+new Date().getTime(),).then(function (geoJson) {
         console.log("geoJson="+geoJson);
-	  	  echarts.registerMap('xicheng',geoJson.data,{});
+	  	  echarts.registerMap('china',geoJson.data,{});
 		   var option = {
 		    tooltip: {
 		        trigger: 'item',
             	formatter: '{b}<br/>{c} (p / km2)'
-		    },
+		    },			
 			backgroundColor: "#404a59",
 		    visualMap: {
 	            min: 500,
@@ -48,7 +48,7 @@ export default {
 		        {
 		        	name: '西城',
 		            type: 'map',
-		            mapType: 'xicheng',
+		            mapType: 'china',
 		            aspectScale: 0.85,  //地图长度比
 		            label: {
 		                normal: {
@@ -77,17 +77,7 @@ export default {
                     },
                 },
 		            data: [
-		            	{name: '德胜门', value: 17000},
-	                    {name: '什刹海', value: 1000},
-	                    {name: '新街口', value: 5000},
-	                    {name: '展览路', value: 20000},
-	                    {name: '月坛', value: 25000},
-	                    {name: '金融街', value: 30000},
-	                    {name: '西长安街', value: 18000},
-	                    {name: '广安门外', value: 2300},
-	                    {name: '广安门内', value: 20000},
-	                    {name: '大栅栏', value: 16000},
-	                    {name: '陶然亭', value: 28000}
+		            	
 		            ]
 		        }                              
 		    ]

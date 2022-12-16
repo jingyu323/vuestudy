@@ -25,9 +25,7 @@ export default {
     //  var echarts = require('echarts');
       	var myChart = echarts.init(document.getElementById('container'));
         this.axiosIns.get('/static/china.json?time='+new Date().getTime(),).then(function (geoJson) {
-
-			// echarts.registerMap('xicheng',geoJson.data,{});
-			const option = {
+	     const option = {
         // 背景颜色
         backgroundColor: "#404a59",
         // 提示浮窗样式
@@ -49,6 +47,105 @@ export default {
           },
           showDelay: 100
         },
+		graphic:{
+			type: "group",
+          rotation: Math.PI / 4,
+          bounding: "raw",
+          left: 110,
+          top: 110,
+          z: 100,
+          children: [
+            {
+              type: "rect",
+              left: "center",
+              top: "center",
+              z: 100,
+              shape: {
+                width: 400,
+                height: 50,
+              },
+              style: {
+                fill: "rgba(0,0,0,0.3)",
+              },
+            },
+            {
+              type: "text",
+              left: "center",
+              top: "center",
+              z: 100,
+              style: {
+                fill: "#ddd",
+                text: "Create By Rain",
+                font: 'bolder 1.5rem "Microsoft YaHei", sans-serif',
+              },
+            },
+          ],
+			
+       
+    },
+		series: [
+    // {
+    //     type: "scatter",
+    //     coordinateSystem: "geo",
+    //     symbol: "pin",
+    //     legendHoverLink: true,
+    //     symbolSize: [60, 60],
+    //     // 这里渲染标志里的内容以及样式
+    //     label: {
+    //         show: true,
+    //         formatter(value) {
+    //             return value.data.value[2];
+    //         },
+    //         color: "#fff",
+    //     },
+    //     // 标志的样式
+    //     itemStyle: {
+    //         normal: {
+    //             color: "rgba(255,0,0,.7)",
+    //             shadowBlur: 2,
+    //             shadowColor: "D8BC37",
+    //         },
+    //     },
+    //     // 数据格式，其中name,value是必要的，value的前两个值是数据点的经纬度，其他的数据格式可以自定义
+    //     // 至于如何展示，完全是靠上面的formatter来自己定义的
+    //     data: [
+    //         { name: "西藏", value: [91.23, 29.5, 2333] },
+    //         { name: "黑龙江", value: [128.03, 47.01, 1007] },
+    //     ],
+    //     showEffectOn: "render",
+    //     rippleEffect: {
+    //         brushType: "stroke",
+    //     },
+    //     hoverAnimation: true,
+    //     zlevel: 1,
+    // },
+    {
+      type: "effectScatter",
+      coordinateSystem: "geo",
+      effectType: "ripple",
+      showEffectOn: "render",
+      rippleEffect: {
+        period: 10,
+        scale: 10,
+        brushType: "fill",
+      },
+
+      hoverAnimation: true,
+      itemStyle: {
+        normal: {
+          color: "rgba(255, 235, 59, .7)",
+          shadowBlur: 10,
+          shadowColor: "#333",
+        },
+      },
+      zlevel: 1,
+      data: [
+        { name: "西藏", value: [91.23, 29.5, 2333] },
+        { name: "黑龙江", value: [128.03, 47.01, 1007] },
+      ],
+    },
+],
+
         // 地图配置
         geo: {
           map: "china",
@@ -102,11 +199,9 @@ export default {
           },
         },
       };
-      // 地图注册，第一个参数的名字必须和option.geo.map一致
-      echarts.registerMap("china",geoJson.data)
-
-	  myChart.setOption(option);
-  
+			// 地图注册，第一个参数的名字必须和option.geo.map一致
+			echarts.registerMap("china",geoJson.data)
+			myChart.setOption(option);
 		});
       
  
