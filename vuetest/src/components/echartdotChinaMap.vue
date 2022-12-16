@@ -32,6 +32,7 @@ export default {
 		        trigger: 'item',
             	formatter: '{b}<br/>{c} (p / km2)'
 		    },
+			backgroundColor: "#404a59",
 		    visualMap: {
 	            min: 500,
 	            max: 50000,
@@ -63,6 +64,18 @@ export default {
 		                    }
 		                }
 		            },
+					itemStyle: {
+                    normal: {
+                        areaColor: "#040c3c", //地图本身的颜色
+                        borderColor: "#00feda", //省份边框颜色
+                        borderWidth: 1, // 省份边框宽度
+                        opacity: 1, //图形透明度
+                    },
+                    emphasis: {
+                        areaColor: "#040c3c", // 高亮时候地图显示的颜色
+                        borderWidth: 0, // 高亮时的边框宽度
+                    },
+                },
 		            data: [
 		            	{name: '德胜门', value: 17000},
 	                    {name: '什刹海', value: 1000},
