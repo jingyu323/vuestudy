@@ -41,7 +41,9 @@
       </li>
 
       <li>
-        <router-link to="/echartdot">dot test </router-link>
+        <router-link to="/echartdot"> dot test </router-link>
+        <router-link to="/echartdotMap"> echartdotMap   </router-link>
+        <router-link to="/echartdotSingleAxiz"> echartdotSingleAxiz   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>
