@@ -141,6 +141,7 @@ li {
   margin: 0 10px;
 }
 a {
+  margin: 5px;
   color: #42b983;
 }
 </style>

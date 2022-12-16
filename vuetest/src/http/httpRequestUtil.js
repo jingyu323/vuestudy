@@ -2,7 +2,7 @@ import axios from 'axios'
 // 全局引入
 
 var axiosIns = axios.create({
-  baseURL: 'https://easy-mock.com/vuetest',
+  baseURL: '/',
   timeout: 1000,
   headers: {'X-Custom-Header': 'foobar'}
 })

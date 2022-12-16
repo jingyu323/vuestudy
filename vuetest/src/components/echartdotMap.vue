@@ -23,11 +23,13 @@ export default {
     dotChart: function () {
      console.log("ssss");
     //  var echarts = require('echarts');
-      var chartDom = document.getElementById('container');
 
-      var myChart = echarts.init(chartDom);
-      this.axiosIns.get('../json/xicheng.json',function(geoJson){
-	  	  echarts.registerMap('xicheng',geoJson,{});
+      var myChart = echarts.init(document.getElementById('container'));
+
+        this.axiosIns.get('/static/xicheng?time='+new Date().getTime(),).then(function (geoJson) {
+
+        console.log("geoJson="+geoJson);
+	  	  echarts.registerMap('xicheng',geoJson.data,{});
 		   var option = {
 		    tooltip: {
 		        trigger: 'item',

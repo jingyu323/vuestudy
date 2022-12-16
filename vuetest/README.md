@@ -43,3 +43,7 @@ vue4
 import   echarts from 'echarts';
 示例
 https://blog.csdn.net/weixin_55181759/category_11824935.html
+
+# 本地json GET 加载问题
+主要是在url后添加时间戳
+get('/static/xicheng?time='+new Date().getTime()
