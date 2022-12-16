@@ -9,6 +9,7 @@ import echartdot from '@/components/echartdot'
 import echartdotMap from '@/components/echartdotMap'
 import echartdotSingleAxiz from '@/components/echartdotSingleAxiz'
 import echartdAiq from '@/components/echartdAiq'
+import echartdotChinaMap from '@/components/echartdotChinaMap'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/echartdAiq',
       name: 'echartdAiq',
       component: echartdAiq
+    },
+    {
+      path: '/echartdotChinaMap',
+      name: 'echartdotChinaMap',
+      component: echartdotChinaMap
     }
   ]
 })

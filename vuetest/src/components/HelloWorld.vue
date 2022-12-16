@@ -45,6 +45,7 @@
         <router-link to="/echartdotMap"> echartdotMap   </router-link>
         <router-link to="/echartdotSingleAxiz"> echartdotSingleAxiz   </router-link>
         <router-link to="/echartdAiq"> echartdAiq   </router-link>
+        <router-link to="/echartdotChinaMap"> echartdotChinaMap   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>
