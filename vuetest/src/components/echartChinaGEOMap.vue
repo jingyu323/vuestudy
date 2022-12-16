@@ -9,6 +9,10 @@
 
 <script>
   import * as echarts from 'echarts';
+  import beijing from "@/assets/mapJson/beijing.json"
+  import shanxi from "@/assets/mapJson/shanxi.json"
+  import xian from "@/assets/mapJson/xian.json"
+  import xianyang from "@/assets/mapJson/xianyang.json"
 export default {
   name: 'echartdot',
   data () {
@@ -21,7 +25,7 @@ export default {
       window.history.back()
     },
     dotChart: function () {
-     console.log("ssss");
+     console.log("ssss"+beijing);
     //  var echarts = require('echarts');
       	var myChart = echarts.init(document.getElementById('container'));
         this.axiosIns.get('/static/china.json?time='+new Date().getTime(),).then(function (geoJson) {
@@ -201,11 +205,53 @@ export default {
       };
 			// 地图注册，第一个参数的名字必须和option.geo.map一致
 			echarts.registerMap("china",geoJson.data)
-			myChart.setOption(option);
-		});
-      
- 
+		
+			myChart.on('click', ({name}) => {
+				console.log("ssddsdsd...."+JSON.stringify(name));
+				if (name === "北京市") {
+					// 修改option的配置，可以继续自定义
+					option.geo.zoom = 0.8
+					// 就像上面提到的，这里必须要和注册地图时的名字一致
+					option.geo.map = "beijing"
+					// 注册地图
+					echarts.registerMap("beijing", beijing)
+					// 重新渲染
+					myChart.setOption(option, true)
+				}
+				if (name === "陕西省") {
+					// 修改option的配置，可以继续自定义
+					option.geo.zoom = 0.8
+					// 就像上面提到的，这里必须要和注册地图时的名字一致
+					option.geo.map = "shanxi"
+					// 注册地图
+					echarts.registerMap("shanxi", shanxi)
+					// 重新渲染
+					myChart.setOption(option, true)
+				}
+				if (name === "西安市") {
+					// 修改option的配置，可以继续自定义
+					option.geo.zoom = 0.8
+					// 就像上面提到的，这里必须要和注册地图时的名字一致
+					option.geo.map = "xian"
+					// 注册地图
+					echarts.registerMap("xian", xian)
+					// 重新渲染
+					myChart.setOption(option, true)
+				}
+				if (name === "咸阳市") {
+					// 修改option的配置，可以继续自定义
+					option.geo.zoom = 0.8
+					// 就像上面提到的，这里必须要和注册地图时的名字一致
+					option.geo.map = "xianyang"
+					// 注册地图
+					echarts.registerMap("xianyang", xianyang)
+					// 重新渲染
+					myChart.setOption(option, true)
+				}
+				})
 
+				myChart.setOption(option);
+		});
     },
 
     },
