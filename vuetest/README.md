@@ -47,5 +47,5 @@ https://blog.csdn.net/weixin_55181759/category_11824935.html
 # 本地json GET 加载问题
 主要是在url后添加时间戳
 get('/static/xicheng?time='+new Date().getTime()
-# 地图json
+# 地图json 阿里云地图数据下载
 http://datav.aliyun.com/portal/school/atlas/area_selector#&lat=30.230594564932193&lng=98.316650390625&zoom=6
