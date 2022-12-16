@@ -195,6 +195,63 @@ export default {
               //     { name: "黑龙江", value: [128.03, 47.01, 1007] },
               //   ],
               // },
+			  {
+				type: "map",
+				map: "china",
+              	label: {
+                // 通常状态下的样式
+                normal: {
+                  show: true,
+                  textStyle: {
+                    color: "#fff"
+                  }
+                },
+                // 鼠标放上去的样式
+                emphasis: {
+                  textStyle: {
+                    color: "#fff"
+                  }
+                }
+              },
+              // 地图区域的样式设置
+              itemStyle: {
+                normal: {
+                  borderColor: "rgba(147, 235, 248, 1)",
+                  borderWidth: 1,
+                  areaColor: {
+                    type: "radial",
+                    x: 0.5,
+                    y: 0.5,
+                    r: 0.8,
+                    colorStops: [
+                      {
+                        offset: 0,
+                        color: "rgba(147, 235, 248, 0)" // 0% 处的颜色
+                      },
+                      {
+                        offset: 1,
+                        color: "rgba(147, 235, 248, .2)" // 100% 处的颜色
+                      }
+                    ],
+                    globalCoord: false // 缺省为 false
+                  },
+                  shadowColor: "rgba(128, 217, 248, 1)",
+                  shadowOffsetX: -2,
+                  shadowOffsetY: 2,
+                  shadowBlur: 10
+                },
+                // 鼠标放上去高亮的样式
+                emphasis: {
+                  areaColor: "#389BB7",
+                  borderWidth: 0
+                }
+              },
+			                  data: [
+                  { name: "西藏", value: [91.23, 29.5, 2333] },
+                  { name: "黑龙江", value: [128.03, 47.01, 1007] },
+                ],
+
+			  }
             ],
 
             // 地图配置
