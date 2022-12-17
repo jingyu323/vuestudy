@@ -77,6 +77,9 @@ export default {
                     },
                 },
 		            data: [
+                { name: '青海省', value: 1000 },
+                { name: '陕西省', value: 40000 },
+                { name: '河北省', value: 40000 },
 		            	
 		            ]
 		        }                              

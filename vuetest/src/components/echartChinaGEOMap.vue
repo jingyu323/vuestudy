@@ -37,7 +37,7 @@ export default {
       return Math.round(Math.random() * 500);
     },
     dotChart: function () {
-
+      // json及registerMap的方式
       var mydata = [
         { name: '北京', value: '100' }, { name: '天津', value: this.randomData() },
       ];
