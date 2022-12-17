@@ -14,6 +14,7 @@ import shanxi from "@/assets/mapJson/shanxi.json";
 import xian from "@/assets/mapJson/xian.json";
 import xianyang from "@/assets/mapJson/xianyang.json";
 import china from "@/assets/mapJson/china.json";
+import binzhoushi from "@/assets/mapJson/binzhoushi.json";
 export default {
   name: "echartdot",
   data() {
@@ -180,7 +181,7 @@ export default {
                   brushType: "stroke"
                 },
                 hoverAnimation: true,
-                zlevel: 1
+                zlevel: 10
               },
               {
                 name: '中国',
@@ -328,9 +329,9 @@ export default {
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "shanxi";
               option.series[1].data=[  
-                { name: '西安市', value: 5500 },
+                { name: '西安市', value: 5700 },
                 { name: '榆林市', value: 1000 },
-                { name: '咸阳市', value: 4000 },
+                { name: '咸阳市', value: 4300 },
               ];
               // 注册地图
               echarts.registerMap("shanxi", shanxi);
@@ -367,6 +368,22 @@ export default {
               ];
               // 注册地图
               echarts.registerMap("xianyang", xianyang);
+              // 重新渲染
+              myChart.setOption(option, true);
+            }
+            if (name === "彬州市") {
+              // 修改option的配置，可以继续自定义
+              option.geo.zoom = 0.8;
+              // 就像上面提到的，这里必须要和注册地图时的名字一致
+              option.geo.map = "binzhoushi";
+              option.series[1].data=[  
+                { name: '秦都区', value: 5500 },
+                { name: '渭城区', value: 1000 },
+                { name: '礼泉县', value: 4000 },
+                { name: '彬州市', value: 52000 },
+              ];
+              // 注册地图
+              echarts.registerMap("binzhoushi", binzhoushi);
               // 重新渲染
               myChart.setOption(option, true);
             }
