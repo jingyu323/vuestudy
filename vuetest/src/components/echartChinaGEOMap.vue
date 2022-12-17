@@ -124,7 +124,7 @@ export default {
               // 是否展示滑块
               calculable: true,
               // 指定映射的数据，对应的是option.series，这里根据自己的实际需要进行配置
-              seriesIndex: [1],
+              seriesIndex: [2],
               // 从下到上的颜色
               inRange: {
                 color: [
@@ -152,6 +152,7 @@ export default {
                 type: "scatter",
                 coordinateSystem: "geo",
                 symbol: "pin",
+                geoIndex:0,
                 legendHoverLink: true,
                 symbolSize: [60, 60],
                 // 这里渲染标志里的内容以及样式
@@ -188,6 +189,7 @@ export default {
                 name: '中国',
                 type: 'map',
                 mapType: 'china',
+                geoIndex: 0, // 解决添加visumao 重合问题
                 aspectScale: 0.85,  //地图长度比
                 label: {
                   // 通常状态下的样式
