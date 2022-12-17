@@ -147,10 +147,9 @@ export default {
             },
             series: [
               {
-                type: "scatter",
-                coordinateSystem: "geo",
+                type: "scatter", //类型：散点
+                coordinateSystem: "geo",  //使用地理坐标系
                 symbol: "pin",
-                geoIndex: 0,
                 legendHoverLink: true,
                 symbolSize: [60, 60],
                 // 这里渲染标志里的内容以及样式
@@ -175,7 +174,6 @@ export default {
                   { name: "西藏", value: [91.23, 29.5, 2333] },
                   { name: "黑龙江", value: [128.03, 47.01, 1007] }
                 ],
-                // data:mydata,
                 showEffectOn: "render",
                 rippleEffect: {
                   brushType: "stroke"
@@ -187,7 +185,7 @@ export default {
                 name: '中国',
                 type: 'map',
                 mapType: 'china',
-                geoIndex: 0, // 解决添加visumao 重合问题
+                geoIndex: 0, // 解决添加visumap 重合问题
                 aspectScale: 0.85,  //地图长度比
                 label: {
                   // 通常状态下的样式
