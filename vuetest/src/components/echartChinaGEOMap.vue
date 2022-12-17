@@ -166,7 +166,8 @@ export default {
                     color: "rgba(255,0,0,.7)",
                     shadowBlur: 2,
                     shadowColor: "D8BC37"
-                  }
+                  },
+                  
                 },
                 // 数据格式，其中name,value是必要的，value的前两个值是数据点的经纬度，其他的数据格式可以自定义
                 // 至于如何展示，完全是靠上面的formatter来自己定义的
@@ -251,6 +252,8 @@ export default {
             // 地图配置
             geo: {
               map: "china",
+              show: true,  //地图是否显示  默认true
+              roam:false,    //是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移 开启也没啥效果
               label: {
                 // 通常状态下的样式
                 normal: {
@@ -304,6 +307,8 @@ export default {
           // 地图注册，第一个参数的名字必须和option.geo.map一致
           echarts.registerMap("china", geoJson.data);
 
+          // 解绑click事件
+          myChart.off("click");
           myChart.on("click", ({ name }) => {
             console.log("ssddsdsd...." + JSON.stringify(name));
             if (name === "北京市") {
