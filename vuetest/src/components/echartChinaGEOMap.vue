@@ -51,9 +51,7 @@ export default {
             backgroundColor: "#404a59",
             grid: {
               top: 50,  // 设置图表位置
-
               left: '45%',
-
               width: '35%' // 设置图表宽度
             },
             // 提示浮窗样式
@@ -152,7 +150,7 @@ export default {
                 type: "scatter",
                 coordinateSystem: "geo",
                 symbol: "pin",
-                geoIndex:0,
+                geoIndex: 0,
                 legendHoverLink: true,
                 symbolSize: [60, 60],
                 // 这里渲染标志里的内容以及样式
@@ -239,15 +237,17 @@ export default {
                     borderWidth: 0
                   }
                 }, data: [
-                  { name: '北京市', value: 17000 },
+                  { name: '北京市', value: 6000 },
                   { name: '天津市', value: 1000 },
                   { name: '陕西省', value: 5000 },
                   { name: '山西省', value: 3000 },
                   { name: '湖南省', value: 2000 },
+                  { name: '新疆维吾尔自治区', value: 5700 },
+                  { name: '青海省', value: 5100 },
+                  { name: '西藏自治区', value: 4200 },
                 ]
               }
             ],
-
             // 地图配置
             geo: {
               map: "china",
