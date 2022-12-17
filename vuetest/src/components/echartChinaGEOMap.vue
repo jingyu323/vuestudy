@@ -316,6 +316,7 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "beijing";
+             
               // 注册地图
               echarts.registerMap("beijing", beijing);
               // 重新渲染
@@ -326,6 +327,11 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "shanxi";
+              option.series[1].data=[  
+                { name: '西安市', value: 5500 },
+                { name: '榆林市', value: 1000 },
+                { name: '咸阳市', value: 4000 },
+              ];
               // 注册地图
               echarts.registerMap("shanxi", shanxi);
               // 重新渲染
@@ -336,6 +342,13 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "xian";
+              option.series[1].data=[  
+                { name: '雁塔区', value: 5500 },
+                { name: '莲湖区', value: 1000 },
+                { name: '新城区', value: 4000 },
+                { name: '周至县', value: 4700 },
+                { name: '临潼区', value: 2000 },
+              ];
               // 注册地图
               echarts.registerMap("xian", xian);
               // 重新渲染
@@ -346,6 +359,12 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "xianyang";
+              option.series[1].data=[  
+                { name: '秦都区', value: 5500 },
+                { name: '渭城区', value: 1000 },
+                { name: '礼泉县', value: 4000 },
+                { name: '彬州市', value: 52000 },
+              ];
               // 注册地图
               echarts.registerMap("xianyang", xianyang);
               // 重新渲染
