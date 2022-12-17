@@ -124,7 +124,7 @@ export default {
               // 是否展示滑块
               calculable: true,
               // 指定映射的数据，对应的是option.series，这里根据自己的实际需要进行配置
-              seriesIndex: [2],
+              seriesIndex: [1], // 指定虚拟地图的用的data 根据虚拟地图指定的数据显示不同的样式
               // 从下到上的颜色
               inRange: {
                 color: [
