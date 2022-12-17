@@ -227,7 +227,9 @@ export default {
                     shadowColor: "rgba(128,217,248,1)",
                     shadowOffsetX: -2,
                     shadowOffsetY: 2,
-                    shadowBlur: 10
+                    shadowBlur: 10,
+                    borderColor: "#fff", //边框白色
+                    borderWidth: 1, 
                   },
                   // 鼠标放上去高亮的样式
                   emphasis: {
@@ -235,12 +237,12 @@ export default {
                     borderWidth: 0
                   }
                 }, data: [
-                  { name: '北京市', value: 6000 },
+                  { name: '北京市', value: 5200 },
                   { name: '天津市', value: 1000 },
-                  { name: '陕西省', value: 5000 },
+                  { name: '陕西省', value: 6000 },
                   { name: '山西省', value: 3000 },
                   { name: '湖南省', value: 2000 },
-                  { name: '新疆维吾尔自治区', value: 5700 },
+                  { name: '新疆维吾尔自治区', value: 3900 },
                   { name: '青海省', value: 5100 },
                   { name: '西藏自治区', value: 4200 },
                 ]
