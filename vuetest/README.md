@@ -54,3 +54,6 @@ CSDN 地图
 https://blog.csdn.net/m0_67401660/article/details/126081326?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-126081326-blog-126470836.pc_relevant_3mothn_strategy_and_data_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-126081326-blog-126470836.pc_relevant_3mothn_strategy_and_data_recovery&utm_relevant_index=1
 
 # visualMap
+需要结合 series联合使用
+
+# geo 和  echarts.registerMap
