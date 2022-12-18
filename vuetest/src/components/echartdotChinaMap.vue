@@ -9,6 +9,12 @@
 
 <script>
   import * as echarts from 'echarts';
+  import beijing from "@/assets/mapJson/beijing.json";
+import shanxi from "@/assets/mapJson/shanxi.json";
+import xian from "@/assets/mapJson/xian.json";
+import xianyang from "@/assets/mapJson/xianyang.json";
+import china from "@/assets/mapJson/china.json";
+import binzhoushi from "@/assets/mapJson/binzhoushi.json";
 export default {
   name: 'echartdot',
   data () {
@@ -85,6 +91,92 @@ export default {
 		        }                              
 		    ]
 		};
+
+    myChart.off("click");
+          myChart.on("click", ({ name }) => {
+            console.log("ssddsdsd...." + JSON.stringify(name));
+            if (name === "北京市") {
+              // 修改option的配置，可以继续自定义
+              // option.geo.zoom = 0.8;
+              // 就像上面提到的，这里必须要和注册地图时的名字一致
+              // option.geo.map = "beijing";
+
+              // echarts.registerMap('china',"beijing",{});
+             
+              // 注册地图
+              echarts.registerMap("beijing", beijing);
+              // 重新渲染
+              myChart.setOption(option, true);
+            }
+            if (name === "陕西省") {
+              // 修改option的配置，可以继续自定义
+              
+              // 就像上面提到的，这里必须要和注册地图时的名字一致
+              // option.geo.map = "shanxi";
+              option.series[0].data=[  
+                { name: '西安市', value: 5700 },
+                { name: '榆林市', value: 1000 },
+                { name: '咸阳市', value: 4300 },
+              ];
+              option.series[0].mapType = "shanxi";
+              console.log("option="+option);
+              // 注册地图
+              echarts.registerMap("shanxi", shanxi);
+              // 重新渲染
+              myChart.setOption(option, true);
+            }
+            if (name === "西安市") {
+              // 修改option的配置，可以继续自定义
+              // option.geo.zoom = 0.8;
+              // 就像上面提到的，这里必须要和注册地图时的名字一致
+              option.series[0].mapType = "xian";
+              option.series[0].data=[  
+                { name: '雁塔区', value: 5500 },
+                { name: '莲湖区', value: 1000 },
+                { name: '新城区', value: 4000 },
+                { name: '周至县', value: 4700 },
+                { name: '临潼区', value: 2000 },
+              ];
+              // 注册地图
+              echarts.registerMap("xian", xian);
+              // 重新渲染
+              myChart.setOption(option, true);
+            }
+            if (name === "咸阳市") {
+              // 修改option的配置，可以继续自定义
+              // option.geo.zoom = 0.8;
+              // 就像上面提到的，这里必须要和注册地图时的名字一致
+              // option.geo.map = "xianyang";
+              option.series[0].mapType = "xianyang";
+              option.series[0].data=[  
+                { name: '秦都区', value: 5500 },
+                { name: '渭城区', value: 1000 },
+                { name: '礼泉县', value: 4000 },
+                { name: '彬州市', value: 52000 },
+              ];
+              // 注册地图
+              echarts.registerMap("xianyang", xianyang);
+              // 重新渲染
+              myChart.setOption(option, true);
+            }
+            if (name === "彬州市") {
+              // 修改option的配置，可以继续自定义
+              // option.geo.zoom = 0.8;
+              // 就像上面提到的，这里必须要和注册地图时的名字一致
+              // option.geo.map = "binzhoushi";
+              option.series[0].mapType = "binzhoushi";
+              option.series[1].data=[  
+                { name: '秦都区', value: 5500 },
+                { name: '渭城区', value: 1000 },
+                { name: '礼泉县', value: 4000 },
+                { name: '彬州市', value: 52000 },
+              ];// 注册地图
+              echarts.registerMap("binzhoushi", binzhoushi);
+              // 重新渲染
+              myChart.setOption(option, true);
+            }
+          });
+
       myChart.setOption(option);
     });
 
