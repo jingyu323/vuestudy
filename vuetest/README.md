@@ -57,3 +57,10 @@ https://blog.csdn.net/m0_67401660/article/details/126081326?spm=1001.2101.3001.6
 需要结合 series联合使用
 
 # geo 和  echarts.registerMap
+
+# 引入外部js data
+// 定义数据
+const AREANAME = {}
+export {AREANAME}
+引用
+import {AREANAME} from "@/data/areaName.js";
