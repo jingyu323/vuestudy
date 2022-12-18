@@ -168,7 +168,7 @@ export default {
                     shadowBlur: 2,
                     shadowColor: "D8BC37"
                   },
-                  
+
                 },
                 // 数据格式，其中name,value是必要的，value的前两个值是数据点的经纬度，其他的数据格式可以自定义
                 // 至于如何展示，完全是靠上面的formatter来自己定义的
@@ -201,6 +201,12 @@ export default {
                   emphasis: {
                     textStyle: {
                       color: "#fff"
+                    },
+                    itemStyle: {
+                      opacity: 1,
+                      borderColor: "#f18355",
+                      borderWidth: "3",
+                      areaColor: "yellow"
                     }
                   }
                 },
@@ -231,12 +237,12 @@ export default {
                     shadowOffsetY: 2,
                     shadowBlur: 10,
                     borderColor: "#fff", //边框白色
-                    borderWidth: 1, 
+                    borderWidth: 1,
                   },
                   // 鼠标放上去高亮的样式
                   emphasis: {
                     areaColor: "#389BB7",
-                    borderWidth: 0
+                    borderWidth: 0,
                   }
                 }, data: [
                   { name: '北京市', value: 5200 },
@@ -254,7 +260,7 @@ export default {
             geo: {
               map: "china",
               show: true,  //地图是否显示  默认true
-              roam:false,    //是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移 开启也没啥效果
+              roam: false,    //是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移 开启也没啥效果
               label: {
                 // 通常状态下的样式
                 normal: {
@@ -317,7 +323,7 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "beijing";
-             
+
               // 注册地图
               echarts.registerMap("beijing", beijing);
               // 重新渲染
@@ -328,7 +334,7 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "shanxi";
-              option.series[1].data=[  
+              option.series[1].data = [
                 { name: '西安市', value: 5700 },
                 { name: '榆林市', value: 1000 },
                 { name: '咸阳市', value: 4300 },
@@ -343,7 +349,7 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "xian";
-              option.series[1].data=[  
+              option.series[1].data = [
                 { name: '雁塔区', value: 5500 },
                 { name: '莲湖区', value: 1000 },
                 { name: '新城区', value: 4000 },
@@ -360,7 +366,7 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "xianyang";
-              option.series[1].data=[  
+              option.series[1].data = [
                 { name: '秦都区', value: 5500 },
                 { name: '渭城区', value: 1000 },
                 { name: '礼泉县', value: 4000 },
@@ -376,7 +382,7 @@ export default {
               option.geo.zoom = 0.8;
               // 就像上面提到的，这里必须要和注册地图时的名字一致
               option.geo.map = "binzhoushi";
-              option.series[1].data=[  
+              option.series[1].data = [
                 { name: '秦都区', value: 5500 },
                 { name: '渭城区', value: 1000 },
                 { name: '礼泉县', value: 4000 },
