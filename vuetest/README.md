@@ -108,6 +108,9 @@ npm run dev
 然后启动项目即可。 
 
 # vue 引入 easyUI
+官网
+https://www.jeasyui.cn/document/vue/index.html
+
 npm install vx-easyui --save
 
 # vue 引入layui
