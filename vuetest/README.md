@@ -64,3 +64,61 @@ const AREANAME = {}
 export {AREANAME}
 引用
 import {AREANAME} from "@/data/areaName.js";
+# 铁路线的画法
+画一条白色虚线
+再画一条黑色实线
+
+# vue 安装 jQery
+错误原因：该错误是未安装JQuery依赖包导致。
+
+解决方案：安装依赖包
+1.执行安装jquery依赖包命令
+
+	cnpm install jquery --save
+
+2.webpack配置
+（1）.在项目根目录下的build目录下找到webpack.base.conf.js文件，在开头使用以下代码引入webpack，因为该文件默认没有引用
+
+var webpack = require('webpack')
+(2)然后在module.exports中添加一段代码，
+
+ plugins: [ 
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      $: "jquery" 
+    }) 
+  ]
+
+3.在main.js里导入jQuery
+
+import 'jquery'
+4.配置完成，启动项目
+
+npm run dev
+
+注：如果项目中引用了.eslintrc.js文件，还需要在文件的module.exports中，为env添加一个键值对 jquery: true
+
+	env: {
+	  // 原有
+	  browser: true,
+	  // 添加
+	  jquery: true
+	}
+然后启动项目即可。 
+
+# vue 引入 easyUI
+npm install vx-easyui --save
+
+# vue 引入layui
+https://www.cnblogs.com/CIBud/p/14963219.html
+1.把layui对应的包放在static文件夹下，所以就直接放在了static下
+2.在index.html中直接引入layui.js和layui.css
+3.在vue组件中的created勾子函数中写入如下代码
+  created(){
+    const _this = this;
+    layui.use(['layer'],function(){
+      _this.layer = layui.layer,
+      this.layer.msg('hello');
+    })
+  }
