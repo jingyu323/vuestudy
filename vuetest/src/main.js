@@ -10,6 +10,7 @@ import httpRequestUtils from './http/httpRequestUtil'
 Vue.prototype.axiosIns = httpRequestUtils.initAxiosIns()
 
 Vue.config.productionTip = false
+import 'jquery'
 
 import 'vx-easyui/dist/themes/default/easyui.css';
 import 'vx-easyui/dist/themes/icon.css';
@@ -25,4 +26,3 @@ new Vue({
   template: '<App/>'
 })
 
-import 'jquery'

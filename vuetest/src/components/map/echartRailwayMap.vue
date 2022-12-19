@@ -3,7 +3,23 @@
   <div style="height:900px;">
     <h2>China Railway Map</h2>
     <button @click="goback()">返回</button>
+    <DataGrid :data="data" style="height:250px">
+            <GridColumn field="itemid" title="Item ID"></GridColumn>
+            <GridColumn field="name" title="Name"></GridColumn>
+            <GridColumn field="listprice" title="List Price" align="right"></GridColumn>
+            <GridColumn field="unitcost" title="Unit Cost" align="right"></GridColumn>
+            <GridColumn field="attr" title="Attribute" width="30%"></GridColumn>
+            <GridColumn field="status" title="Status" align="center"></GridColumn>
+        </DataGrid>
     <div id="container" style="height: 100%"></div>
+    <!-- <Dialog ref="d1"
+        :title="'Draggable And Resizable'"
+        :dialogStyle="{width:'400px',height:'200px'}"
+        :modal="true"
+        :draggable="true"
+        :resizable="true">
+    <p style="text-align:center;margin:50px 0;font-size:16px">对话框内容。</p>
+</Dialog> -->
   </div>
 </template>
 
@@ -16,12 +32,22 @@ import xianyang from "@/assets/mapJson/xianyang.json";
 import china from "@/assets/mapJson/china.json";
 import binzhoushi from "@/assets/mapJson/binzhoushi.json";
 import { AREANAME } from "@/data/areaName.js";
+import $ from 'jquery';
 export default {
   name: "echartdot",
   data() {
     return {
       msg: "this is  echartdot  file ",
       tableData:[],
+      data: [{
+                        "code": "FI-SW-01",
+                        "name": "Koi",
+                        "unitcost": 10.00,
+                        "status": "P",
+                        "listprice": 36.50,
+                        "attr": "Large",
+                        "itemid": "EST-1"
+                    }]
     };
   },
   methods: {
@@ -51,13 +77,8 @@ export default {
           shade: 0,
           skin: 'demo-class',//设置标题背景色为白色
           content: `
-				<div id="mapGrid" style="height:100%; width:100%; height:250px;background-color:#FFF; padding:5px; ">
-          2222
-					<DataGrid class="easyui-datagrid mapGrid" style="height:100%; width:100%" :data="tableData">
-            <GridColumn field="itemname" title="Item ID"></GridColumn>  
-            <GridColumn field="itemcode" title="itemcode"></GridColumn>
-          </DataGrid>
-          <table class="easyui-datagrid mapGrid" style="height:100%; width:100%" :data="tableData">
+				<div  style="width:100%; height:400px;background-color:#FFF;  "> 
+          <table id="mapGrid" class="easyui-datagrid"  ></table>
 				</div>
 			`,
           area: ['54%', '30%']
@@ -91,8 +112,23 @@ export default {
       //   data: [{ id: '-1', itemname: '请先查询数据!', bgcolor: '#fff000' }],
       // })
 
-      $(".mapGrid").datagrid('loadData', mapTipList);
-      this.tableData = mapTipList;
+      // $(".mapGrid").datagrid('loadData', mapTipList);
+      // this.tableData = mapTipList;
+      var table = layui.table;
+      table.render({
+        data:mapTipList,
+  elem: '#mapGrid' //指定原始表格元素选择器（推荐id选择器）
+  ,height: 215 //容器高度
+  ,cols: [[{field: 'itemname', title: 'itemname', width:80, sort: true, fixed: 'left'},
+  {field: 'itemcode', title: 'itemcode', width:80, sort: true, fixed: 'left'},
+  {field: 'compname', title: 'compname', width:80, sort: true, fixed: 'left'},
+  {field: 'totalinvestment', title: 'totalinvestment', width:80, sort: true, fixed: 'left'},
+  {field: 'yearinvestplan', title: 'yearinvestplan', width:80, sort: true, fixed: 'left'},
+  {field: 'itemname', title: 'itemname', width:80, sort: true, fixed: 'left'},
+{field: 'yearinvestcomplete', title: 'yearinvestcomplete', width: 400,templet: '#title'},] ] //设置表头
+  //,…… //更多参数参考右侧目录：基本参数选项
+});
+
     },
     convertData: function (data) {
       var res = [];
@@ -148,16 +184,16 @@ export default {
             var start = params.data.fromName;
             var end = params.data.toName;
             //这里的四个数据 需要从后台获取 此处写ajax就好
-            var gjxmsltip = 0;
-            var ztjtip = 0;
-            var bntzjhtip = 0;
-            var tzwctip = 0;
+            var gjxmsltip = 10;
+            var ztjtip = 20;
+            var bntzjhtip =30;
+            var tzwctip = 40;
 
             let res = "<div>" +
               "<p style='padding-left:10px;padding-right:20px;font-size:0.07rem;height:0.25rem;line-height:0.25rem;background:#4CA6A6;color:white;'>" + start + "-" + end + "电铁配电工程</p>"
               + "<div style='margin:10px;color:#000;'>"
               + "<p>挂接项目数量：" + gjxmsltip + "</p>"
-              + "<p>总投资：" + ztjtip + "</p>"
+              + "<p>总投资：" + ztjtip + "万元</p>"
               + "<p>本年投资计划：" + bntzjhtip + "万元</p>"
               + "<p>投资完成：" + tzwctip + "万元</p>"
               + "</div>"
