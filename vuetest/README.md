@@ -114,6 +114,9 @@ https://www.jeasyui.cn/document/vue/index.html
 npm install vx-easyui --save
 
 # vue 引入layui
+官网：
+http://layui.winxapp.cn/doc/modules/table.html
+
 https://www.cnblogs.com/CIBud/p/14963219.html
 1.把layui对应的包放在static文件夹下，所以就直接放在了static下
 2.在index.html中直接引入layui.js和layui.css
