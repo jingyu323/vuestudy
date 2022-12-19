@@ -122,3 +122,6 @@ https://www.cnblogs.com/CIBud/p/14963219.html
       this.layer.msg('hello');
     })
   }
+
+  # 总结
+  layUI 可以作为弹窗或者表格使用，作为动态操作元素的定制使用
