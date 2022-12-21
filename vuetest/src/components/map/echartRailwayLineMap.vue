@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <div style="height:900px;">
-    <h2>China Railway Map</h2>
+    <h2>China Railway  Line Map</h2>
     <button @click="goback()">返回</button>
     <DataGrid :data="data" style="height:250px">
             <GridColumn field="itemid" title="Item ID"></GridColumn>
@@ -12,14 +12,7 @@
             <GridColumn field="status" title="Status" align="center"></GridColumn>
         </DataGrid>
     <div id="container" style="height: 100%"></div>
-    <!-- <Dialog ref="d1"
-        :title="'Draggable And Resizable'"
-        :dialogStyle="{width:'400px',height:'200px'}"
-        :modal="true"
-        :draggable="true"
-        :resizable="true">
-    <p style="text-align:center;margin:50px 0;font-size:16px">对话框内容。</p>
-</Dialog> -->
+   
   </div>
 </template>
 

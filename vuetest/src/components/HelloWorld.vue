@@ -48,6 +48,7 @@
         <router-link to="/echartdotChinaMap"> echartdotChinaMap   </router-link>
         <router-link to="/echartChinaGEOMap"> echartChinaGEOMap   </router-link>
         <router-link to="/echartRailwayMap"> echartRailwayMap   </router-link>
+        <router-link to="/echartRailwayLineMap"> echartRailwayLineMap   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>
