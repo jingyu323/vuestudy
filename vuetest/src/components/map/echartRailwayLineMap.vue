@@ -3,16 +3,7 @@
   <div style="height:900px;">
     <h2>China Railway  Line Map</h2>
     <button @click="goback()">返回</button>
-    <DataGrid :data="data" style="height:250px">
-            <GridColumn field="itemid" title="Item ID"></GridColumn>
-            <GridColumn field="name" title="Name"></GridColumn>
-            <GridColumn field="listprice" title="List Price" align="right"></GridColumn>
-            <GridColumn field="unitcost" title="Unit Cost" align="right"></GridColumn>
-            <GridColumn field="attr" title="Attribute" width="30%"></GridColumn>
-            <GridColumn field="status" title="Status" align="center"></GridColumn>
-        </DataGrid>
     <div id="container" style="height: 100%"></div>
-   
   </div>
 </template>
 
