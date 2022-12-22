@@ -101,9 +101,13 @@ export default {
       var option = {
         geo: {
           map: "china",
-          roam: false,
-          zoom: 1.23,
+          roam: true,
+          zoom: 3,
+          center: [116.4632992051, 40.2979563489], // 设置 自动缩放的图形中心位置
           label: {
+            show: true,
+            offset: [1, 100], // 这个影响 地图上身份的显示
+            color: "#fff",
             emphasis: {
               show: false,
               color: "#fff"
@@ -127,13 +131,8 @@ export default {
             borderColor: "#516a89", //省市边界线00fcff 516a89
             borderWidth: 1
           },
-          // backgroundColor:"#013954",
-          center: [116.4632992051, 40.2979563489], // 设置 自动缩放的图形中心位置
-          label: {
-            show: true,
-            // offset: [1, 1000], // 这个影响 地图上身份的显示
-            color: "#fff"
-          },
+          
+       
 
          
         },
