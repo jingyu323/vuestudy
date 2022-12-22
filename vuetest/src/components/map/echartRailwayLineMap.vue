@@ -116,7 +116,6 @@ export default {
             },
 
             emphasis: {
-              // 这块不生效
               itemStyle: {
                 color: "red" //悬浮背景
               }
@@ -136,12 +135,7 @@ export default {
             color: "#fff"
           },
 
-          emphasis: {
-            //  这个生效但是我还是喜欢黄色背景
-            itemStyle: {
-              color: "#87CEEB" //悬浮背景
-            }
-          }
+         
         },
         series: [
           {
@@ -160,6 +154,8 @@ export default {
             effect: {
               //线特效，小火车
               constantSpeed: 10,
+              period: 2,// 绽放的速度-可以模拟成烟花
+              trailLength: 0.5,//长度持久度
               show: true,
               color: "#00EAFF",
               symbolSize: 15,
