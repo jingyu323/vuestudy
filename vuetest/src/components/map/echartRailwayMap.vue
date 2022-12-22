@@ -38,29 +38,14 @@ export default {
   data() {
     return {
       msg: "this is  echartdot  file ",
-      tableData:[],
-      data: [{
-                        "code": "FI-SW-01",
-                        "name": "Koi",
-                        "unitcost": 10.00,
-                        "status": "P",
-                        "listprice": 36.50,
-                        "attr": "Large",
-                        "itemid": "EST-1"
-                    }]
+     
+       
     };
   },
   methods: {
     goback: function () {
       window.history.back();
-    },
-    // getMap:function (mapName) {
-    // 	let cityName = mapDict[mapName]
-    // 	if(cityName){
-    // 		return [cityName,mapData[cityName]]
-    // 	}
-    // 	return ['china',china]
-    // },
+    }, 
     randomData: function () {
       return Math.round(Math.random() * 500);
     },
@@ -95,39 +80,8 @@ export default {
       var finaltitle = { "leftcols": "leftcols11", "rightcols": "rightcols33" };
       var leftcols = finaltitle.leftcols;
       var rightcols = finaltitle.rightcols;
-      var mapTipList = [{
-        itemname: '京杭铁路',
-        itemcode: '1111',
-        compname: '10001',
-        totalinvestment: '200',
-        yearinvestplan: '2000',
-        yearinvestcomplete: '333'
-      }];
-      //此处应ajax获取后端数据
-      // document.getElementsByClassName(".mapGrid")[0].datagrid({
-      //   frozenColumns: leftcols,
-      //   columns: rightcols,
-      //   fitColumns: true,
-      //   singleSelect: true,
-      //   data: [{ id: '-1', itemname: '请先查询数据!', bgcolor: '#fff000' }],
-      // })
-
-      // $(".mapGrid").datagrid('loadData', mapTipList);
-      // this.tableData = mapTipList;
-      var table = layui.table;
-      table.render({
-        data:mapTipList,
-  elem: '#mapGrid' //指定原始表格元素选择器（推荐id选择器）
-  ,height: 215 //容器高度
-  ,cols: [[{field: 'itemname', title: 'itemname', width:80, sort: true, fixed: 'left'},
-  {field: 'itemcode', title: 'itemcode', width:80, sort: true, fixed: 'left'},
-  {field: 'compname', title: 'compname', width:80, sort: true, fixed: 'left'},
-  {field: 'totalinvestment', title: 'totalinvestment', width:80, sort: true, fixed: 'left'},
-  {field: 'yearinvestplan', title: 'yearinvestplan', width:80, sort: true, fixed: 'left'},
-  {field: 'itemname', title: 'itemname', width:80, sort: true, fixed: 'left'},
-{field: 'yearinvestcomplete', title: 'yearinvestcomplete', width: 400,templet: '#title'},] ] //设置表头
-  //,…… //更多参数参考右侧目录：基本参数选项
-});
+ 
+       
 
     },
     convertData: function (data) {
@@ -151,14 +105,7 @@ export default {
 
     dotChart: function () {
       console.log(AREANAME);
-      var mapTipList = [{
-        itemname: '京杭铁路',
-        itemcode: '1111',
-        compname: '10001',
-        totalinvestment: '200',
-        yearinvestplan: '2000',
-        yearinvestcomplete: '333'
-      }];
+ 
 
       var BJData = [[{ 'name': '广东' }, { 'name': '贵州' }], [{ 'name': '山西' }, { 'name': '新疆' }], [{ 'name': '吉林' }, { 'name': '广西壮族自治区' }], [{ 'name': '内蒙古自治区' }, { 'name': '西藏' }], [{ 'name': '北京' }, { 'name': '香港特別行政区' }], [{ 'name': '福建' }, { 'name': '云南' }]];
 
