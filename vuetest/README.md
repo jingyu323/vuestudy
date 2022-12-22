@@ -108,9 +108,15 @@ npm run dev
 然后启动项目即可。 
 
 # vue 引入 easyUI
+官网
+https://www.jeasyui.cn/document/vue/index.html
+
 npm install vx-easyui --save
 
 # vue 引入layui
+官网：
+http://layui.winxapp.cn/doc/modules/table.html
+
 https://www.cnblogs.com/CIBud/p/14963219.html
 1.把layui对应的包放在static文件夹下，所以就直接放在了static下
 2.在index.html中直接引入layui.js和layui.css
@@ -122,3 +128,13 @@ https://www.cnblogs.com/CIBud/p/14963219.html
       this.layer.msg('hello');
     })
   }
+
+  # 总结
+  layUI 可以作为弹窗或者表格使用，作为动态操作元素的定制使用
+
+
+  # 图标素材
+  https://www.iconfont.cn/
+
+  # 地图边界 GEO
+  https://www.oschina.net/translate/geojson-spec
