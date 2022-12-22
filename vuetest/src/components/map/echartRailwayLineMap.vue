@@ -106,7 +106,7 @@ export default {
           center: [116.4632992051, 40.2979563489], // 设置 自动缩放的图形中心位置
           label: {
             show: true,
-            offset: [1, 100], // 这个影响 地图上身份的显示
+            // offset: [1, 100], // 这个影响 地图上身份的显示
             color: "#fff",
             emphasis: {
               show: false,
