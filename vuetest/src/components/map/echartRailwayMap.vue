@@ -117,9 +117,6 @@ export default {
       console.log("ssss" + beijing);
       //  var echarts = require('echarts');
       var myChart = echarts.init(document.getElementById("container"));
-
-
-
       echarts.registerMap('china', china, {});
       var option = {
         tooltip: {
