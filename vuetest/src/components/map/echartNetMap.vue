@@ -1,6 +1,8 @@
 /* eslint-disable */
 <template>
   <div class="govRightdiv">
+    <h2>China Map </h2>
+    <button @click="goback()">返回</button>
     <div class="charts" style="position:relative">
       <div class="height" id="map"></div>
       <div class="mapTip">
@@ -245,14 +247,18 @@ export default {
         "第二京汉广",
         "郑州徐州",
         "北京九江"
-      ];
+      ]; 
+    
       var option = {
+        backgroundColor: "#404a59",
         legend: {
           show: true,
           data: legend,
+          top:'10%',
           x: "center",
-          left: "0%",
-          bottom: "0%",
+          left: "3%",
+          
+          // bottom: "30%",
           orient: "vertical",
           textStyle: {
             color: "#fff",
