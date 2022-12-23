@@ -13,6 +13,7 @@ import echartdotChinaMap from '@/components/echartdotChinaMap'
 import echartChinaGEOMap from '@/components/echartChinaGEOMap'
 import echartRailwayMap from '@/components/map/echartRailwayMap'
 import echartRailwayLineMap from '@/components/map/echartRailwayLineMap'
+import echartNetMap from '@/components/map/echartNetMap'
 
 Vue.use(Router)
 
@@ -77,6 +78,11 @@ export default new Router({
       path: '/echartRailwayLineMap',
       name: 'echartRailwayLineMap',
       component: echartRailwayLineMap
+    },
+    {
+      path: '/echartNetMap',
+      name: 'echartNetMap',
+      component: echartNetMap
     },
   ]
 })
