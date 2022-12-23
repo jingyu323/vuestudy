@@ -26,6 +26,7 @@
   height: 300px; 
   position: absolute;
   top: 50px;
+  color:#fff;
   right: 100px;
 }
 
