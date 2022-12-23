@@ -172,7 +172,9 @@ export default {
       var myChart = echarts.init(document.getElementById("container"));
 
 
-
+      var trainPath =
+        "path://M807.4 938.5c-139.5-8-250.2-31.7-250.2-173.2v-95.5c0-35.5 72.5-64.3 108-64.3h0.3l0.9-152.4c0-8.5-6.9-15.4-15.4-15.4H373.2c-8.5 0-15.4 6.9-15.4 15.4l0.6 148.7c33.6 2.1 103.8 30 103.8 64.1v95.5c0 142.2-111.8 168.4-252.3 175.3l-0.1 0.3 0.9 71.5c0 8.5 6.9 15.4 15.4 15.4h568.1c8.5 0 15.4-6.9 15.4-15.4l-0.8-69.8-1.4-0.2zM598.2 64.5V18.6c0-8.5-6.9-15.4-15.4-15.4H428.6c-8.5 0-15.4 6.9-15.4 15.4V67C212.1 111.8 61.7 291.3 61.7 506c0 153.6 77 289.2 194.4 370.3l42.7-136.7C236 681 196.7 597.4 196.7 504.7c0-177.4 143.8-321.3 321.3-321.3s321.3 143.8 321.3 321.3c0 97.9-43.8 185.5-112.8 244.5l40.1 127.4C884.2 795.4 961.4 659.7 961.4 506c0-218.8-156.2-401.1-363.2-441.5z";
+      
       echarts.registerMap('china', china, {});
       var option = {
         tooltip: {
@@ -272,13 +274,17 @@ export default {
           , {//白线
             name: '白线',
             type: 'lines',
-            selectedMode: 'single',     //添加点击事件 此处必须设置
+            // selectedMode: 'single', 
+            polyline: true,     //添加点击事件 此处必须设置
             zlevel: 2,//zlevel 大的 Canvas 会放在 zlevel 小的 Canvas 的上面。
             effect: {
               show: true,//是否显示特效
               period: 6,//特效动画时间
               trailLength: 0.7,//特效尾迹的长度。取从 0 到 1 的值，数值越大尾迹越长。
               color: '#F3B329',
+              symbol: trainPath,
+              symbolSize: 15,
+              constantSpeed: 10,
               symbolSize: 1//线两端的标记大小，可以是一个数组分别指定两端，也可以是单个统一指定
             },
             symbol: ['none', 'diamond'],//无-->箭头使用arrow
@@ -291,20 +297,23 @@ export default {
                 //  curveness: 0.2  //线条弧度 默认为直线
               }
             },
-            data: path
+            data: path,
+            progressiveThreshold: 500,
+            progressive: 200
           },
           , {//黑线
             name: '黑线',
             type: 'lines',
+            polyline: true,
             selectedMode: 'single',     //添加点击事件 此处必须设置
             zlevel: 1,
-            effect: {
-              show: true,
-              period: 6,
-              trailLength: 0.7,
-              color: '#aaa',
-              symbolSize: 1
-            },
+            // effect: {
+            //   show: true,
+            //   period: 6,
+            //   trailLength: 0.7,
+            //   color: '#aaa',
+            //   symbolSize: 1
+            // },
             symbol: ['none', 'diamond'],//arrow
             lineStyle: {
               normal: {
@@ -313,11 +322,17 @@ export default {
                 width: 3,
               }
             },
-            data: path
+            data: path,
+            progressiveThreshold: 500,
+            progressive: 200
           }
         ],
 
       }
+      
+
+
+
       myChart.setOption(option, true);
       let _this = this;
       myChart.on('click', function (params) {
