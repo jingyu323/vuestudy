@@ -41,7 +41,15 @@
       </li>
 
       <li>
-        <router-link to="/echartdot">dot test </router-link>
+        <router-link to="/echartdot"> dot test </router-link>
+        <router-link to="/echartdotMap"> echartdotMap   </router-link>
+        <router-link to="/echartdotSingleAxiz"> echartdotSingleAxiz   </router-link>
+        <router-link to="/echartdAiq"> echartdAiq   </router-link>
+        <router-link to="/echartdotChinaMap"> echartdotChinaMap   </router-link>
+        <router-link to="/echartChinaGEOMap"> echartChinaGEOMap   </router-link>
+        <router-link to="/echartRailwayMap"> echartRailwayMap   </router-link>
+        <router-link to="/echartRailwayLineMap"> echartRailwayLineMap   </router-link>
+        <router-link to="/echartNetMap"> echartNetMap   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>
@@ -138,6 +146,7 @@ li {
   margin: 0 10px;
 }
 a {
+  margin: 5px;
   color: #42b983;
 }
 </style>
