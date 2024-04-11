@@ -1,0 +1,14 @@
+<!--pages/profile/profile.wxml-->
+<view>
+    <swiper indicator-dots="true" autoplay="true" interval="2000">
+    <swiper-item>
+    <image class="image" src="../../images/liangzai1.jpg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+    <image class="image" src="../../images/liangzai2.jpg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+    <image class="image" src="../../images/liangzai2.jpg" mode="aspectFill"></image>
+    </swiper-item>
+    </swiper>
+</view>
