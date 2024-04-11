@@ -32,3 +32,5 @@ swiper image{
   line-height: 36px;
 
 }
+
+progress {margin: 10px;}
