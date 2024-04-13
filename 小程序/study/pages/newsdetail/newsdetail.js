@@ -7,6 +7,7 @@ Page({
   data: {
     "msg":"this is from msg",
     info:['周一','周2','周3','周4'],
+    temdata:[{img:"image1",info:"内容1"},{img:"image2",info:"内容2"},{img:"image3",info:"内容3"},{img:"image3",info:"内容4"}],
     flag:true,
     num:0,
 

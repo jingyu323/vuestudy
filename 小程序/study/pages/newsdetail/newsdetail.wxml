@@ -38,6 +38,15 @@
 
 </view>
 
+<view>
+tempalte 使用
+<import src="../../template/list/list"></import>
+<view wx:for="{{temdata}}"   wx:key="index">
+  <template is='list'  data="{{item}}"></template>
+</view>
+
+</view>
+
 </view>
 
 

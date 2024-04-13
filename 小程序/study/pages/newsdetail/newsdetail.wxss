@@ -1,4 +1,6 @@
 /* pages/newsdetail/newsdetail.wxss */
+@import'../../template/list/list';
+
 .box{
   width: 200rpx;
   height: 200rpx;

@@ -5,7 +5,8 @@
     "pages/tabs/home/home",
     "pages/tabs/news/news",
     "pages/tabs/my/my",
-    "pages/newsdetail/newsdetail"
+    "pages/newsdetail/newsdetail",
+    "template/list/list"
   ],
   "window": {
     "navigationBarTextStyle": "black",
