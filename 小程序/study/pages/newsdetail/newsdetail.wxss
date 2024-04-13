@@ -1,0 +1,9 @@
+/* pages/newsdetail/newsdetail.wxss */
+.box{
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #666;
+}
+.active{
+  color: red;
+}

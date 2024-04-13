@@ -1,0 +1,4 @@
+<!--pages/tabs/news/news.wxml-->
+<text>pages/tabs/news/news.wxml</text>
+
+<navigator url="../../newsdetail/newsdetail"> 查看详情 </navigator>

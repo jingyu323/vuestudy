@@ -1,0 +1,43 @@
+<!--pages/newsdetail/newsdetail.wxml-->
+<text>pages/newsdetail/newsdetail.wxml</text>
+
+
+<view>
+  navigator open-tyoe 属性练习
+  <view>
+  1.返回
+<navigator open-type="navigateBack"> 返回</navigator>
+</view>
+<view>
+<text>2. redirect  属性 关闭当前页面跳转到应用内某个页面，但是不允许跳转到tabbar 页面</text>
+
+<view>3. navigator  属性 保留当前页面跳转到应用内某个页面，但是不允许跳转到tabbar 页面</view>
+
+<view>4. reluanch  属性 关闭所有页面跳转到应用内某个页面</view>
+
+<view>5. exit  属性  退出小程序</view>
+
+<view> mesg test {{msg }} </view>
+<checkbox checked="true">  aa </checkbox>
+
+<view wx:key="index" class="{{index==num?'active':''}}"  data-index="{{index}}" bind:tap="light"  wx:for="{{info}}"> {{item}}--{{index}}
+</view>
+<view bind:tap="faterTap">
+事件：
+<view bind:tap="childTap"> child 冒泡</view>
+<view catch:tap="catchTap">catch 冒泡</view>
+</view>
+
+<!-- 事件对象 -->
+<button id= "1212312" type="primary" bind:tap="tapparam" data-id="4545" > 参数测试</button>
+</view>
+
+<view>
+<button type="warn" bind:tap="changeFlag"> 点击切换隐藏</button>
+<view class="box" wx:if="{{flag}}"></view>
+
+</view>
+
+</view>
+
+
