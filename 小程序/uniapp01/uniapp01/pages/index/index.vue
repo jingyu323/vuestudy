@@ -35,14 +35,15 @@
 				</view>  
 			</scroll-view>
 		</view>
-		
 	</view>
+	<CateList></CateList>
 	
  </view>
 </template>
 
 <script>
 	import request from '../../utils/request'
+	import CateListVue from '../../components/CateList/CateList.vue';
 	export default {
 		data() {
 			return {
@@ -65,13 +66,13 @@
 					{"showimgurl":"https://yanxuan.nosdn.127.net/static-union/1712829159cbbb06.png?quality=75&type=webp&imageView&thumbnail=250x0","goodstext":"菊花茶"},
 					{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"},
 					{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"},
-					{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"},
+					{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶"},
 					{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"}
 				]},
 				{"picurl":"https://yanxuan.nosdn.127.net/static-union/171283006293a3f0.png",
 				"goodsitems":[{"showimgurl":"https://yanxuan.nosdn.127.net/static-union/1712829159cbbb06.png?quality=75&type=webp&imageView&thumbnail=250x0","goodstext":"菊花茶"},
 				{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"},
-				{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"},
+				{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶"},
 				{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"},
 				{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"}
 				]}],
@@ -198,21 +199,24 @@
 		 height: 130rpx;
 		 width: 130rpx;
 	}
-	
-	  .catgoryItemimg{
+	.catgoryItem{
+		margin: 30rpx 0rpx;
+	}
+	.catgoryItemimg{
 		  height: 370rpx;
 		  width: 100%;
-		 
-		 
 	}
 	.catgoryItemscroll{
-		height: 300rpx;
+		height: 310rpx;
 		display: flex;
 		white-space: nowrap;
+		 
 	}
 	.goodsitem  {
 		height: 300rpx;
+		width: 200rpx;
 		display: inline-block;
+		margin: 5rpx 10rpx;
 		
 	}
 	
@@ -220,6 +224,16 @@
 		height: 200rpx;
 		width: 200rpx;
 		
+	}
+	.goodstext{
+		height: 100rpx;
+		text-align: center;
+		white-space: pre-wrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
 	}
 
 

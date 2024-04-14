@@ -81,22 +81,37 @@
 	 height: 130rpx;
 	 width: 130rpx;
 }
+.catgoryItem{
+	margin: 30rpx 0rpx;
+}
 .catgoryItemimg{
 	  height: 370rpx;
 	  width: 100%;
 }
 .catgoryItemscroll{
-	height: 300rpx;
+	height: 310rpx;
 	display: flex;
 	white-space: nowrap;
 }
 .goodsitem  {
 	height: 300rpx;
+	width: 200rpx;
 	display: inline-block;
+	margin: 5rpx 10rpx;
 }
 .goodsitem image{
 	height: 200rpx;
 	width: 200rpx;
+}
+.goodstext{
+	height: 100rpx;
+	text-align: center;
+	white-space: pre-wrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
 }
 .title {
 	font-size: 36rpx;

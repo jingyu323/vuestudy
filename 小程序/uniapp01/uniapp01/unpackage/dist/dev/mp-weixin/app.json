@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/cart/cart",
+    "pages/catgory/catgory",
+    "pages/personal/personal"
   ],
   "subPackages": [],
   "window": {
@@ -9,6 +12,36 @@
     "navigationBarTitleText": "网易严选",
     "navigationBarBackgroundColor": "#BB2C08",
     "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#BB2C08",
+    "list": [
+      {
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home_active.png",
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "iconPath": "static/images/catgory.png",
+        "selectedIconPath": "static/images/catgroy_active.png",
+        "text": "分类",
+        "pagePath": "pages/catgory/catgory"
+      },
+      {
+        "iconPath": "/static/images/cart.png",
+        "selectedIconPath": "static/images/cart_active.png",
+        "text": "购物车",
+        "pagePath": "pages/cart/cart"
+      },
+      {
+        "iconPath": "static/images/my.png",
+        "selectedIconPath": "static/images/my_active.png",
+        "text": "个人中心",
+        "pagePath": "pages/personal/personal"
+      }
+    ]
   },
   "usingComponents": {}
 }
