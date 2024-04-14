@@ -164,12 +164,104 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/reques
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
       title: 'Hello',
       indexnavdata: [],
-      naveindex: -1
+      naveindex: 0,
+      kingKonData: [{
+        "img": "https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png",
+        "desc": "新品首发"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/fede8b110c502ec5799702d5ec824792.png",
+        "desc": "床品"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/896a3beac514ae8f40aafe028e5fec56.png",
+        "desc": "服饰鞋包"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/37520d1204a0c55474021b43dac2a69e.png",
+        "desc": "乳饮酒水"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png",
+        "desc": "家庭清洁"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/559d2a240ec20b096590a902217009ff.png",
+        "desc": "母婴亲子"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/5c088559ebcc3f0ffcda663f04dfbeb2.png",
+        "desc": "运动旅行"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/static-union/1687343272e1b463.png",
+        "desc": "平台清仓"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/static-union/1642506913355bb9.png",
+        "desc": "宠物生活"
+      }, {
+        "img": "https://yanxuan.nosdn.127.net/static-union/16644541382b06e4.png",
+        "desc": "每日抄底"
+      }],
+      catgoryList: [{
+        "picurl": "https://yanxuan.nosdn.127.net/static-union/1712830059be0861.png?quality=75&type=webp&imageView&thumbnail=375x0",
+        "goodsitems": [{
+          "showimgurl": "https://yanxuan.nosdn.127.net/static-union/1712829159cbbb06.png?quality=75&type=webp&imageView&thumbnail=250x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }]
+      }, {
+        "picurl": "https://yanxuan.nosdn.127.net/static-union/171283006293a3f0.png",
+        "goodsitems": [{
+          "showimgurl": "https://yanxuan.nosdn.127.net/static-union/1712829159cbbb06.png?quality=75&type=webp&imageView&thumbnail=250x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }]
+      }]
     };
   },
   onLoad: function onLoad() {},

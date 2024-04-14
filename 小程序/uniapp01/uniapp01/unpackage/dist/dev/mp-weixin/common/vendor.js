@@ -10036,6 +10036,7 @@ var _default = function _default(url) {
   return new Promise(function (resolve, reject) {
     uni.request({
       url: _base.default.host + url,
+      // url ,
       data: data,
       method: method,
       success: function success(res) {

@@ -6,12 +6,14 @@
 .navgator .naveItem{
 	display: inline-block;
 	height: 60rpx;
-	width: 100rpx;
+	width: 120rpx;
 	margin: 5rpx;
 	font-size: 30rpx;
+	text-align: center;
 }
 .navgator    .active{
 	color: red;
+	border-bottom: 3rpx solid #BB2C08
 }
 .icon-search{
 	width: 50rpx;
@@ -44,6 +46,57 @@
 	height: 60rpx;
 	border: 1rpx solid #ccc;
 	margin-left: 2rpx;
+}
+.policylist{
+	display: flex;
+	flex-direction: row;
+	margin: 20rpx 0 ;
+	padding: 0 10rpx;
+}
+.policylist .pilicyitem{
+	flex: 1; 
+	display: inline-block;
+	display: flex;
+	height: 50rpx;
+	font-size: 28rpx;
+	line-height: 50rpx;
+	align-items: center;
+}
+.pilicyitem image { 
+	height: 50rpx;
+	width: 50rpx;
+}
+.kingKonglist{
+	margin: 15rpx 0 ;
+	display: flex;
+	flex-wrap: wrap;
+}
+.kingKonglist .kingKongitem{ 
+	width: 20%;
+	font-size: 26rpx;
+	text-align: center;
+	margin: 10rpx 0 ;
+}
+.kingKongitem image{
+	 height: 130rpx;
+	 width: 130rpx;
+}
+.catgoryItemimg{
+	  height: 370rpx;
+	  width: 100%;
+}
+.catgoryItemscroll{
+	height: 300rpx;
+	display: flex;
+	white-space: nowrap;
+}
+.goodsitem  {
+	height: 300rpx;
+	display: inline-block;
+}
+.goodsitem image{
+	height: 200rpx;
+	width: 200rpx;
 }
 .title {
 	font-size: 36rpx;

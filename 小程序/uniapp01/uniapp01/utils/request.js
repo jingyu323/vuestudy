@@ -4,6 +4,7 @@ export default(url,data={},method='GET')=>{
 	return new Promise((resolve,reject)=>{
 		uni.request({
 			url:base.host+url,
+				// url ,
 			data,
 			method,
 			success:(res)=>{
