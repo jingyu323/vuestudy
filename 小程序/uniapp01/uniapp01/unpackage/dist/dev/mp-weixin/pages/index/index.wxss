@@ -1,0 +1,52 @@
+
+.navgator{
+	display: flex;
+	white-space: nowrap;
+}
+.navgator .naveItem{
+	display: inline-block;
+	height: 60rpx;
+	width: 100rpx;
+	margin: 5rpx;
+	font-size: 30rpx;
+}
+.navgator    .active{
+	color: red;
+}
+.icon-search{
+	width: 50rpx;
+	height: 50rpx;
+	margin-left: 30rpx;
+	margin: 10rpx 0;
+}
+.content {
+	display: flex;
+	flex-direction: row;
+}
+.content button{
+	width: 140rpx;
+	height: 60rpx;
+	font-size: 26rpx;
+}
+.logo {
+	height: 40rpx;
+	width: 160rpx;
+	margin: 14rpx 10rpx;
+}
+.search{
+	width: 420rpx;
+	height: 60rpx;
+	display: flex;
+	flex: row;
+}
+.search input{
+	width: 360rpx;
+	height: 60rpx;
+	border: 1rpx solid #ccc;
+	margin-left: 2rpx;
+}
+.title {
+	font-size: 36rpx;
+	color: #8f8f94;
+}
+

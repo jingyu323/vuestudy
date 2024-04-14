@@ -1,0 +1,7 @@
+<!--template/list/list.wxml-->
+<template name="list">
+<view class="list">
+  <view class="left">{{item.img}} view left </view>
+  <view class="right">  {{item.info}} view right</view>
+</view>
+</template>

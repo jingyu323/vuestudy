@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "网易严选",
+    "navigationBarBackgroundColor": "#BB2C08",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}
