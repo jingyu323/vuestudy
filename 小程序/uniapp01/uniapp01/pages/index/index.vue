@@ -13,31 +13,32 @@
 		<view class="naveItem"  :class="{active: naveindex===index ? true : false}" @click="changeindex(index)" v-for="(item,index) of indexnavdata"  :key="index"  >{{item}}</view>
 				
 	</scroll-view>
-	<view class="policylist">
-		<view class="pilicyitem"><image src="../../static/images/yi.png"><text>网易自营品牌</text></view>
-		<view class="pilicyitem"><image src="../../static/images/dun.png"><text>30天无忧退货</text></view>
-		<view class="pilicyitem"><image src="../../static/images/mony.png"><text>48小时快速退款</text></view>
-	</view>
-	<swiper autoplay interval="2000" indicator-dots="">
-		<swiper-item><image src="https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&amp;imageView&amp;quality=75&amp;thumbnail=750x0"></image></swiper-item>
-		<swiper-item><image src="https://yanxuan.nosdn.127.net/hxm/oly-picture/f0b3fb8a6fa6473b8741fcaeb03c341d.jpg?type=webp&imageView&quality=75&thumbnail=750x0"></image></swiper-item>
-	</swiper>
-	<view class="kingKonglist">
-		<view class="kingKongitem" v-for="item  in kingKonData"  :key="item.desc"><image :src="item.img"><text>{{item.desc}}</text></view>
-	</view>
-	<view class="catgoryList">
-		<view class="catgoryItem"   v-for="item  in catgoryList" :key="item.picurl">
-			<image  class="catgoryItemimg" :src="item.picurl"></image>
-			<scroll-view scroll-x="true" class="catgoryItemscroll">
-				<view class="goodsitem" v-for="goods  in item.goodsitems" :key="goods.showimgurl">
-					<image :src="goods.showimgurl"></image>
-					<view class="goodstext">{{goods.goodstext}}</view>
-				</view>  
-			</scroll-view>
+	<view v-if="naveindex==0">
+		<view class="policylist">
+			<view class="pilicyitem"><image src="../../static/images/yi.png"><text>网易自营品牌</text></view>
+			<view class="pilicyitem"><image src="../../static/images/dun.png"><text>30天无忧退货</text></view>
+			<view class="pilicyitem"><image src="../../static/images/mony.png"><text>48小时快速退款</text></view>
+		</view>
+		<swiper autoplay interval="2000" indicator-dots="">
+			<swiper-item><image src="https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&amp;imageView&amp;quality=75&amp;thumbnail=750x0"></image></swiper-item>
+			<swiper-item><image src="https://yanxuan.nosdn.127.net/hxm/oly-picture/f0b3fb8a6fa6473b8741fcaeb03c341d.jpg?type=webp&imageView&quality=75&thumbnail=750x0"></image></swiper-item>
+		</swiper>
+		<view class="kingKonglist">
+			<view class="kingKongitem" v-for="item  in kingKonData"  :key="item.desc"><image :src="item.img"><text>{{item.desc}}</text></view>
+		</view>
+		<view class="catgoryList">
+			<view class="catgoryItem"   v-for="item  in catgoryList" :key="item.picurl">
+				<image  class="catgoryItemimg" :src="item.picurl"></image>
+				<scroll-view scroll-x="true" class="catgoryItemscroll">
+					<view class="goodsitem" v-for="goods  in item.goodsitems" :key="goods.showimgurl">
+						<image :src="goods.showimgurl"></image>
+						<view class="goodstext">{{goods.goodstext}}</view>
+					</view>  
+				</scroll-view>
+			</view>
 		</view>
 	</view>
-	<CateList></CateList>
-	
+	<CateList v-else  :L1id="L1id"     ></CateList>
  </view>
 </template>
 
@@ -45,6 +46,9 @@
 	import request from '../../utils/request'
 	import CateListVue from '../../components/CateList/CateList.vue';
 	export default {
+		components: {
+		    CateListVue,
+		  },
 		data() {
 			return {
 				title: 'Hello',
@@ -76,6 +80,7 @@
 				{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"},
 				{"showimgurl":"https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0","goodstext":"菊花茶"}
 				]}],
+				L1id:'111',
 			}
 		},
 		onLoad() {
@@ -97,6 +102,8 @@
 			changeindex(index){
 				console.log("index="+index)
 				this.naveindex = index;
+				this.L1id = index;
+				console.log(this.L1id)
 			}
 
 		}

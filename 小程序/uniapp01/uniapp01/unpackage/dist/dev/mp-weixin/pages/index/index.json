@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "首页",
   "usingComponents": {
-    "cate-list": "/components/CateList/CateList"
+    "cate-list": "/components/CateList/CateList",
+    "cate-list-vue": "/components/CateList/CateList"
   }
 }
