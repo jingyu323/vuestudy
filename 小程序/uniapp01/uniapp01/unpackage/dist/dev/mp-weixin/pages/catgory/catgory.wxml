@@ -1,1 +1,1 @@
-<view>分类</view>
+<view class="catgory"><view class="header"><view class="search">商品搜索</view></view></view>
