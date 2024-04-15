@@ -166,10 +166,10 @@ exports.default = void 0;
 //
 //
 //
-//
 var _default = {
   data: function data() {
     return {
+      "navnum": 0,
       "navelist": ["家具生活", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电"],
       "catgoryitem": {
         "picurl": "https://yanxuan.nosdn.127.net/static-union/1712830059be0861.png?quality=75&type=webp&imageView&thumbnail=375x0",
@@ -228,6 +228,13 @@ var _default = {
         }]
       }]
     };
+  },
+  methods: {
+    changeindex: function changeindex(index) {
+      console.log("index=" + index);
+      this.navnum = index;
+      console.log(this.navnum);
+    }
   }
 };
 exports.default = _default;

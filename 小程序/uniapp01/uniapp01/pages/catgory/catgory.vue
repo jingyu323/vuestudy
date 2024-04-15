@@ -7,8 +7,7 @@
 		 <view class="content">
 			 <view class="left">
 				 <scroll-view class="navscroll" scroll-y="true">
-					  <view  class="naveItem active"   >家具生活</view>
-					 <view  class="naveItem "  v-for="item in navelist" :key="item">{{item}}</view>
+					 <view  class="naveItem "  @click="changeindex(index)"  :class="{active: index === navnum  ? true : false}" v-for="(item,index) in navelist" :key="index">{{item}}</view>
 				 </scroll-view>
 			 </view>
 			 <view class="right">
@@ -28,6 +27,7 @@
 	export default {
 		data() {
 			return {
+				"navnum":0,
 				"navelist":["家具生活","服饰鞋包","美食酒水","个护清洁","母婴亲子","运动旅游","数码家电","服饰鞋包","美食酒水","个护清洁","母婴亲子","运动旅游","数码家电","服饰鞋包","美食酒水","个护清洁","母婴亲子","运动旅游","数码家电","服饰鞋包","美食酒水","个护清洁","母婴亲子","运动旅游","数码家电","服饰鞋包","美食酒水","个护清洁","母婴亲子","运动旅游","数码家电"],
 				"catgoryitem":{"picurl":"https://yanxuan.nosdn.127.net/static-union/1712830059be0861.png?quality=75&type=webp&imageView&thumbnail=375x0",
 					"goodsitems":[
@@ -56,6 +56,14 @@
 				]}]
 				
 			};
+		},
+		methods:{
+			changeindex(index){
+				console.log("index="+index)
+				this.navnum = index;
+			 
+				console.log(this.navnum)
+			}
 		}
 	}
 </script>
@@ -93,6 +101,7 @@
 						line-height: 70rpx;
 						font-size: 30rpx;
 						text-align: center;
+						position: relative;
 						&.active::before{
 							content: "";
 							width: 2rpx;
