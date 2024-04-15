@@ -149,9 +149,85 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
-    return {};
+    return {
+      "navelist": ["家具生活", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电", "服饰鞋包", "美食酒水", "个护清洁", "母婴亲子", "运动旅游", "数码家电"],
+      "catgoryitem": {
+        "picurl": "https://yanxuan.nosdn.127.net/static-union/1712830059be0861.png?quality=75&type=webp&imageView&thumbnail=375x0",
+        "goodsitems": [{
+          "showimgurl": "https://yanxuan.nosdn.127.net/static-union/1712829159cbbb06.png?quality=75&type=webp&imageView&thumbnail=250x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }]
+      },
+      "catgoryList": [{
+        "picurl": "https://yanxuan.nosdn.127.net/static-union/1712830059be0861.png?quality=75&type=webp&imageView&thumbnail=375x0",
+        "goodsitems": [{
+          "showimgurl": "https://yanxuan.nosdn.127.net/static-union/1712829159cbbb06.png?quality=75&type=webp&imageView&thumbnail=250x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }]
+      }, {
+        "picurl": "https://yanxuan.nosdn.127.net/static-union/171283006293a3f0.png",
+        "goodsitems": [{
+          "showimgurl": "https://yanxuan.nosdn.127.net/static-union/1712829159cbbb06.png?quality=75&type=webp&imageView&thumbnail=250x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }, {
+          "showimgurl": "https://yanxuan.nosdn.127.net/hxm/oly-picture/a241aececce23a2bb0f1a8dde15dc9bf.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
+          "goodstext": "菊花茶"
+        }]
+      }]
+    };
   }
 };
 exports.default = _default;
