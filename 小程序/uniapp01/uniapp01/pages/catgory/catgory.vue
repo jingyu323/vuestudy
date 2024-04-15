@@ -78,16 +78,16 @@
 			
 		}
 		.content{
-			display: flex;
-			// height: calc(100vh - 708);
-			height:calc(100% - 620rpx);
+			display: flex; 
+			height: calc(100vh - 102rpx);
 			border-top: #ccc solid 3rpx;
 			.left{
 				width: 20%;
 				border-right: #ccc solid 3rpx;
-				height:calc(100% - 620rpx);
+				height: 100%;
 				.navscroll{
-					height:calc(100% - 620rpx);
+					height:100%;
+					height: calc(100vh - 102rpx);
 					.naveItem{
 						height: 70rpx;
 						line-height: 70rpx;
