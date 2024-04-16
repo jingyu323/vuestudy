@@ -50,6 +50,8 @@
         <router-link to="/echartRailwayMap"> echartRailwayMap   </router-link>
         <router-link to="/echartRailwayLineMap"> echartRailwayLineMap   </router-link>
         <router-link to="/echartNetMap"> echartNetMap   </router-link>
+          <router-link to="/edittable"> edittable   </router-link>
+            <router-link to="/monthdata"> monthdata   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>

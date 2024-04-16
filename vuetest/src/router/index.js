@@ -14,6 +14,8 @@ import echartChinaGEOMap from '@/components/echartChinaGEOMap'
 import echartRailwayMap from '@/components/map/echartRailwayMap'
 import echartRailwayLineMap from '@/components/map/echartRailwayLineMap'
 import echartNetMap from '@/components/map/echartNetMap'
+import edittable from '@/components/edittable'
+import monthdata from '@/components/monthdata'
 
 Vue.use(Router)
 
@@ -83,6 +85,16 @@ export default new Router({
       path: '/echartNetMap',
       name: 'echartNetMap',
       component: echartNetMap
+    },
+    {
+      path: '/edittable',
+      name: 'edittable',
+      component: edittable
+    },
+    {
+      path: '/monthdata',
+      name: 'monthdata',
+      component: monthdata
     },
   ]
 })
