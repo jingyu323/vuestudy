@@ -52,6 +52,9 @@
         <router-link to="/echartNetMap"> echartNetMap   </router-link>
           <router-link to="/edittable"> edittable   </router-link>
             <router-link to="/monthdata"> monthdata   </router-link>
+             <router-link to="/edittable2"> edittable2   </router-link>
+
+
       </li>
     </ul>
     <h2>Ecosystem</h2>

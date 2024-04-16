@@ -18,6 +18,13 @@ import 'vx-easyui/dist/themes/vue.css';
 import EasyUI from 'vx-easyui';
 Vue.use(EasyUI);
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+import { Table,Form } from 'element-ui';
+Vue.use(Table);
+Vue.use(Form);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -15,6 +15,7 @@ import echartRailwayMap from '@/components/map/echartRailwayMap'
 import echartRailwayLineMap from '@/components/map/echartRailwayLineMap'
 import echartNetMap from '@/components/map/echartNetMap'
 import edittable from '@/components/edittable'
+import edittable2 from '@/components/edittable2'
 import monthdata from '@/components/monthdata'
 
 Vue.use(Router)
@@ -95,6 +96,11 @@ export default new Router({
       path: '/monthdata',
       name: 'monthdata',
       component: monthdata
+    },
+    {
+      path: '/edittable2',
+      name: 'edittable2',
+      component: edittable2
     },
   ]
 })
