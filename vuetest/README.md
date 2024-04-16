@@ -141,3 +141,6 @@ https://www.cnblogs.com/CIBud/p/14963219.html
 
   # 如果要显示详细地区省市地图，需要将地图的详细信息添加到
   {"type":"FeatureCollection","features":[ 的数组中
+
+
+  npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver

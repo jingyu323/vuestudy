@@ -1,1 +1,1 @@
-<view>个人中心</view>
+<view class="personal"><view class="header"><block wx:if="{{false}}"></block><block wx:else><image src="../../static/images/weidenglu.jpeg"></image></block></view></view>
