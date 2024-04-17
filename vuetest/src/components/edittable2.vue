@@ -12,7 +12,8 @@
         height="385"
         :data="tableData"
         class="tb-edit"
-        style="width: 100%" @cell-click="getCell"
+        style="width: 100%"
+        @cell-click="getCell"
         :cell-class-name="tableCellClassName"
         highlight-current-row>
           <el-table-column fixed align="center" prop="createTime" label="创建时间" width="150">
@@ -27,7 +28,7 @@
           </el-table-column>
           <el-table-column prop="selecttest" label="测试选择下拉" width="" align="center"  >
             <template slot-scope="scope">
-              <el-select   v-focus v-model="scope.row.selecttest"  value-key="selecttest" v-if=' scope.row.index == tabRowIndex  && scope.column.index == tabColumnIndex'  @change="handleBlur(scope.row)"    >
+              <el-select   v-focus v-model="scope.row.selecttest"   v-if=' scope.row.index == tabRowIndex  && scope.column.index == tabColumnIndex'  @change="handleBlur(scope.row)"    >
                 <el-option
                   v-for="item in FloorsOptions"
                   :key="item"
@@ -38,6 +39,28 @@
               <div v-else>
                 <span   >{{scope.row.selecttest}}</span>
               </div>
+            </template>
+          </el-table-column>
+          <el-table-column prop="checkboxtest" label="测试check" width="" align="center"  >
+            <template slot-scope="scope">
+               <el-checkbox v-model="scope.row.checkboxtest"  v-if=' scope.row.index == tabRowIndex  && scope.column.index == tabColumnIndex'  @change="handleBlur(scope.row)" label="复选框测试"></el-checkbox>
+
+               <div v-else>
+                 <span   >{{scope.row.checkboxtest}}</span>
+               </div>
+            </template>
+          </el-table-column>
+          <el-table-column prop="radiotest" label="测试radio" width="" align="center"  >
+            <template slot-scope="scope">
+              <el-radio-group  v-if=' scope.row.index == tabRowIndex  && scope.column.index == tabColumnIndex' v-focus  @change="handleBlur(scope.row)" v-model="scope.row.radiotest" >
+                <el-radio  label="男"  >男</el-radio>
+                 <el-radio    label="女"  >女</el-radio>
+              </el-radio-group>
+
+              <div v-else>
+                <span   >{{scope.row.radiotest}}</span>
+              </div>
+
             </template>
           </el-table-column>
           <!-- 此处省略 -->
@@ -81,6 +104,8 @@ data() {
                createTime:"2024-01-01",
                powerFactor:"555",
                selecttest:"test1",
+                checkboxtest:"false",
+                radiotest:"",
                setingFlag:false
              },
 
@@ -88,18 +113,24 @@ data() {
                createTime:"2024-02-01",
                powerFactor:"66",
                selecttest:"test2",
+              checkboxtest:"false",
+              radiotest:"",
                setingFlag:false
              },
              {
                createTime:"2024-03-01",
                powerFactor:"66",
                selecttest:"test3",
+              checkboxtest:"false",
+              radiotest:"",
                setingFlag:false
              },
              {
                createTime:"2024-04-01",
                powerFactor:"66",
                selecttest:"test4",
+              checkboxtest:"false",
+               radiotest:"",
                setingFlag:false
              },
              ],
