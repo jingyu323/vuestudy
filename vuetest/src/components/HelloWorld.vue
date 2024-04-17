@@ -51,8 +51,9 @@
         <router-link to="/echartRailwayLineMap"> echartRailwayLineMap   </router-link>
         <router-link to="/echartNetMap"> echartNetMap   </router-link>
           <router-link to="/edittable"> edittable   </router-link>
-            <router-link to="/monthdata"> monthdata   </router-link>
-             <router-link to="/edittable2"> edittable2   </router-link>
+        <router-link to="/monthdata"> monthdata   </router-link>
+        <router-link to="/edittable2"> edittable2   </router-link>
+        <router-link to="/edittable2"> edittable3   </router-link>
 
 
       </li>
