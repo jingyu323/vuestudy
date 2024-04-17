@@ -1,12 +1,8 @@
 <template>
 <div class="divCaculateResultDisplay">
-      <div class="divParamInput2">
-        <label class="labConfidenceParamTitle">结果：</label>
-      </div>
+
       <div class="divNotAllowCaculateResult">
-        <div class="divResultTitle">
-          <p class="pValueResult">导入数据</p>
-        </div>
+    <button @click="goback()">返回</button>
         <el-table
         border
         height="385"
@@ -141,6 +137,9 @@ methods: {
           console.log("行的内容:",row);
             this.tabRowIndex = row.index
             this.tabColumnIndex = column.index
+        },
+        goback: function() {
+          window.history.back();
         },
         tableCellClassName({row, column, rowIndex, columnIndex}){//注意这里是解构
          //利用单元格的 className 的回调方法，给行列索引赋值
