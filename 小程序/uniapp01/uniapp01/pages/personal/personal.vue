@@ -7,7 +7,7 @@
 			<template v-if="userInfo.nickName">		
 				<image  class="userimg" :src="userInfo.avatarUrl"></image>
 				<text>{{userInfo.nickName}}</text>
-				<view class="login"  @click="exit"> 退出登录</view>
+				<button class="exit"  @click="exit"> 退出登录</button>
 				
 			</template>
 			
@@ -41,7 +41,14 @@
 				
 			},
 			exit(){
+				wx.setStorage({
+						key:"useinfo",
+						data:"",
+				})
 				
+				wx.reLaunch({
+					url:'/pages/login/login'
+				})
 			}
 			
 		},
@@ -74,6 +81,11 @@
 			margin: 50rpx;
 
 			
+		}
+		.exit{
+			height: 85rpx;
+			line-height: 85rpx;
+		    margin: 50rpx;
 		}
 		
 	}

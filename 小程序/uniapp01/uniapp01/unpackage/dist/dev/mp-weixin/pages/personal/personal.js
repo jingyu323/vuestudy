@@ -180,7 +180,15 @@ var _default = {
         url: '/pages/login/login'
       });
     },
-    exit: function exit() {}
+    exit: function exit() {
+      wx.setStorage({
+        key: "useinfo",
+        data: ""
+      });
+      wx.reLaunch({
+        url: '/pages/login/login'
+      });
+    }
   },
   mounted: function mounted() {
     var _this = this;
