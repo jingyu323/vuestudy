@@ -135,12 +135,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(wx) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+//
 //
 //
 //
@@ -178,22 +179,22 @@ var _default = {
       "catgoryitem": {
         "picurl": "https://yanxuan.nosdn.127.net/static-union/1712830059be0861.png?quality=75&type=webp&imageView&thumbnail=375x0",
         "goodsitems": [{
-          "showimgurl": "https://yanxuan.nosdn.127.net/ed6400e5be573e1524cdef0b5c9e462d.png?quality=75&type=webp&imageView",
+          "showimgurl": "../../static/images/chuang.png",
           "goodstext": "菊花茶"
         }, {
-          "showimgurl": "https://yanxuan.nosdn.127.net/6b89bb53923f2c1d6d205f6fa3f8dd0b.png?quality=75&type=webp&imageVieww",
+          "showimgurl": "../../static/images/chuang.png",
           "goodstext": "菊花茶"
         }, {
-          "showimgurl": "https://yanxuan.nosdn.127.net/6958e4dc1bd7e96d24f6e8a106b9793d.png?quality=75&type=webp&imageView",
+          "showimgurl": "../../static/images/chuang.png",
           "goodstext": "菊花茶"
         }, {
-          "showimgurl": "https://yanxuan.nosdn.127.net/d9c37df300306ee781a1855ea66bf2af.png?quality=75&type=webp&imageView",
+          "showimgurl": "../../static/images/chuang.png",
           "goodstext": "菊花茶 "
         }, {
-          "showimgurl": "https://yanxuan.nosdn.127.net/63f065345645aa63c6041514a763670e.png?quality=75&type=webp&imageView",
+          "showimgurl": "../../static/images/chuang.png",
           "goodstext": "菊花茶"
         }, {
-          "showimgurl": "https://yanxuan.nosdn.127.net/6b1e9ac36e4b7b774627d1d2c80e8951.png?quality=75&type=webp&imageView",
+          "showimgurl": "../../static/images/chuang.png",
           "goodstext": "菊花茶"
         }]
       },
@@ -241,10 +242,17 @@ var _default = {
       console.log("index=" + index);
       this.navnum = index;
       console.log(this.navnum);
+    },
+    gotoDetail: function gotoDetail(goods) {
+      console.log(goods);
+      wx.navigateTo({
+        url: "/pages/goodsdetail/goodsdetail?goods=" + JSON.stringify(goods)
+      });
     }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
 

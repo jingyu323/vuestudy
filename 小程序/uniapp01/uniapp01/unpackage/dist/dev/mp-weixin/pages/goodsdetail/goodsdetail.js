@@ -145,10 +145,26 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
-    return {};
-  }
+    return {
+      goodsobj: {}
+    };
+  },
+  methods: {},
+  onLoad: function onLoad(options) {
+    console.log(options.goods);
+    this.goodsobj = JSON.parse(options.goods);
+    console.log(this.goodsobj);
+  },
+  mounted: function mounted() {}
 };
 exports.default = _default;
 
