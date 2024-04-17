@@ -21,30 +21,29 @@
             <template slot-scope="scope">
              <el-input v-model="scope.row.powerFactor" @blur="handleBlur(scope.row)"  v-if=' scope.row.index == tabRowIndex  && scope.column.index == tabColumnIndex' v-focus></el-input>
               <div v-else>
-               <span  @click="handleEdit(scope.row,$event  )">{{scope.row.powerFactor}}</span>
+               <span  >{{scope.row.powerFactor}}</span>
               </div>
             </template>
           </el-table-column>
-          <el-table-column prop="selecttest" label="测试选择下拉" width="" align="center" :key="tableKey">
+          <el-table-column prop="selecttest" label="测试选择下拉" width="" align="center"  >
             <template slot-scope="scope">
-              <el-select @change="changeFiremans"  v-model="scope.row.selecttest"  value-key="selecttest" v-if=' scope.row.index == tabRowIndex  && scope.column.index == tabColumnIndex'  @blur="handleBlur(scope.row)"  >
+              <el-select   v-focus v-model="scope.row.selecttest"  value-key="selecttest" v-if=' scope.row.index == tabRowIndex  && scope.column.index == tabColumnIndex'  @change="handleBlur(scope.row)"    >
                 <el-option
-                                v-for="item in FloorsOptions"
-                                :key="item"
-                                :label="item"
-                                :value="item"
-
-                              ></el-option>
+                  v-for="item in FloorsOptions"
+                  :key="item"
+                  :label="item"
+                  :value="item"
+                ></el-option>
               </el-select>
               <div v-else>
-                <span   @click="handleEdit(scope.row,$event  )">{{scope.row.selecttest}}</span>
+                <span   >{{scope.row.selecttest}}</span>
               </div>
             </template>
           </el-table-column>
           <!-- 此处省略 -->
           <el-table-column label="操作">
             <template slot-scope="scope">
-              <!--<el-button @click="handleEdit(scope.$index, scope.row)">编辑</el-button>-->
+               <el-button @click="handleRowEdit(scope.$index, scope.row)">编辑</el-button>
               <el-button type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
             </template>
           </el-table-column>
@@ -77,28 +76,31 @@ data() {
              tabColumnIndex: '', //列角标
              limit: 10,
              total:0,
-             tableKey: Math.random(),
              FloorsOptions:["test1","test2","test3","test4","test5"],
              tableData: [{
                createTime:"2024-01-01",
                powerFactor:"555",
-               selecttest:"test1"
+               selecttest:"test1",
+               setingFlag:false
              },
 
              {
                createTime:"2024-02-01",
                powerFactor:"66",
-               selecttest:"test2"
+               selecttest:"test2",
+               setingFlag:false
              },
              {
                createTime:"2024-03-01",
                powerFactor:"66",
-               selecttest:"test3"
+               selecttest:"test3",
+               setingFlag:false
              },
              {
                createTime:"2024-04-01",
                powerFactor:"66",
-               selecttest:"test4"
+               selecttest:"test4",
+               setingFlag:false
              },
              ],
         }
@@ -106,7 +108,6 @@ data() {
 methods: {
         getCell(row, column, cell, event) {
           console.log("行的内容:",row);
-            console.log("列:",column.index);
             this.tabRowIndex = row.index
             this.tabColumnIndex = column.index
         },
@@ -115,9 +116,6 @@ methods: {
           row.index=rowIndex;
           column.index=columnIndex;
         },
-        changeFiremans() {
-              this.tableKey = Math.random()
-            },
 
         handleBlur(row) {
         row.setingFlag = false;
@@ -144,13 +142,16 @@ methods: {
         console.log(param);
 
       },
-      handleEdit(row,el) {
-        this.$set(row, 'setingFlag', true)
-
+      handleRowEdit(index ,row){
+         this.$set(row, "setingFlag", true)
+      },
+      handleDelete( index,  row){
+        console.log(index  )
+        console.log(  row)
       },
       CurrentChange(){
         console.log("CurrentChange")
       },
     }
 }
-</script> 
+</script>
