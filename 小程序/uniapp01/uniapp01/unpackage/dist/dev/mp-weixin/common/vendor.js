@@ -9466,9 +9466,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 26 */
-/*!**************************************************************!*\
-  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/pages.json ***!
-  \**************************************************************/
+/*!****************************************************************!*\
+  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/pages.json ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9612,9 +9612,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 33 */
-/*!****************************************************************************!*\
-  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/uni.promisify.adaptor.js ***!
-  \****************************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/uni.promisify.adaptor.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9656,7 +9656,13 @@ uni.addInterceptor({
 /* 53 */,
 /* 54 */,
 /* 55 */,
-/* 56 */
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */
 /*!************************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/@babel/runtime/regenerator/index.js ***!
   \************************************************************************************************/
@@ -9665,11 +9671,11 @@ uni.addInterceptor({
 
 // TODO(Babel 8): Remove this file.
 
-var runtime = __webpack_require__(/*! @babel/runtime/helpers/regeneratorRuntime */ 57)();
+var runtime = __webpack_require__(/*! @babel/runtime/helpers/regeneratorRuntime */ 63)();
 module.exports = runtime;
 
 /***/ }),
-/* 57 */
+/* 63 */
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js ***!
   \*******************************************************************/
@@ -9990,7 +9996,7 @@ function _regeneratorRuntime() {
 module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 58 */
+/* 64 */
 /*!*****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/asyncToGenerator.js ***!
   \*****************************************************************/
@@ -10030,10 +10036,10 @@ function _asyncToGenerator(fn) {
 module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 59 */
-/*!********************************************************************!*\
-  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/utils/request.js ***!
-  \********************************************************************/
+/* 65 */
+/*!**********************************************************************!*\
+  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/utils/request.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10045,7 +10051,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _base = _interopRequireDefault(__webpack_require__(/*! ./base.js */ 60));
+var _base = _interopRequireDefault(__webpack_require__(/*! ./base.js */ 66));
 var _default = function _default(url) {
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'GET';
@@ -10068,10 +10074,10 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 60 */
-/*!*****************************************************************!*\
-  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/utils/base.js ***!
-  \*****************************************************************/
+/* 66 */
+/*!*******************************************************************!*\
+  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/utils/base.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

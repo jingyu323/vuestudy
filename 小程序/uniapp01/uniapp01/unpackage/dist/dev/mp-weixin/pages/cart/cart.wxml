@@ -1,1 +1,1 @@
-<view>购物车</view>
+<view class="cart"><view class="cartList"><label class="iconfont icon-xuanzhong _span"></label></view></view>

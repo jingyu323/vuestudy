@@ -1,6 +1,9 @@
 <template>
-	<view>
-		购物车
+	<view class="cart">
+		<view class="cartList">
+			<span class="iconfont icon-xuanzhong"> </span>
+		</view>
+		 
 	</view>
 </template>
 
