@@ -25,12 +25,17 @@
 /* 透明度 */
 /* 文章场景相关 */
 .cart {
-  background-color: #f6f6f6;
+  background-color: #ccc;
+  margin-top: 10rpx;
+}
+.cart .cartList {
+  background-color: #ccc;
+  margin-top: 10rpx;
 }
 .cart .cartList .cartItem {
   height: 200rpx;
   width: 100%;
-  margin-top: 20rpx;
+  margin: 10rpx 0;
   background-color: #fff;
   display: flex;
   position: relative;
@@ -68,5 +73,30 @@
   border: none;
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
+}
+.cart .footer {
+  height: 120rpx;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.cart .footer .right {
+  flex: 1;
+  right: 0;
+  position: absolute;
+  display: flex;
+}
+.cart .footer .right .btn {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  text-align: center;
+}
+.cart .footer .right .btn.order {
+  background-color: #dd1a21;
+  color: #fff;
 }
 
