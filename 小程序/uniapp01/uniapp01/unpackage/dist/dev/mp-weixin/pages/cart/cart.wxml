@@ -1,1 +1,1 @@
-<view>购物车</view>
+<view class="cart"><view class="cartList"><view class="cartItem"><text class="iconfont icon-xuanzhong"></text><view class="goodsitem"><image src="../../static/logo.png"></image><view class="goodsinfo"><view class="name">羊毛衫</view><view class="price">￥ 9000</view></view></view><view class="numctl"><text class="sub">-</text><text class="num">99</text><text class="add">+</text></view></view></view></view>

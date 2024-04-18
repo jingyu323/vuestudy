@@ -1,1 +1,5 @@
-<view><view>ming</view><scroll-view scroll-y="true"><image src="{{goodsobj.showimgurl}}" mode></image><view class="tag">sds</view><view class="price"></view></scroll-view></view>
+<view class="detail"><view class="header">我是名称</view><scroll-view class="detailscroll" scroll-y="true"><image src="{{goodsobj.showimgurl}}" mode></image><view class="tag">我是标签</view><view class="price">￥ 1000.99</view><view>这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是
+			内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣
+			这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣
+			这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣
+			这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣</view></scroll-view><view class="footer"><view class="img"><image src="../../static/images/yi.png" mode></image></view><view class="btn">立即购买</view><view class="btn cart">加入购物车</view></view></view>
