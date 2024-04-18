@@ -2,4 +2,4 @@
 			内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣
 			这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣
 			这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣
-			这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣</view></scroll-view><view class="footer"><view class="img"><image src="../../static/images/yi.png" mode></image></view><view class="btn">立即购买</view><view class="btn cart">加入购物车</view></view></view>
+			这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣这是内容荣</view></scroll-view><view class="footer"><view class="img"><image src="../../static/images/yi.png" mode></image></view><view class="btn">立即购买</view><view data-event-opts="{{[['tap',[['addCart',['$event']]]]]}}" class="btn cart" bindtap="__e">加入购物车</view></view></view>

@@ -166,47 +166,37 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
+var _vuex = __webpack_require__(/*! vuex */ 105);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var _default = {
   data: function data() {
     return {
       goodsobj: {}
     };
   },
-  methods: {},
+  methods: _objectSpread(_objectSpread({}, (0, _vuex.mapMutations)('cart', ['addGoodsMutations'])), {}, {
+    addCart: function addCart() {
+      console.log("add .... ");
+      this.addGoodsMutations(this.goodsobj);
+    }
+  }),
   onLoad: function onLoad(options) {
     console.log(options.goods);
     this.goodsobj = JSON.parse(options.goods);
+    this.goodsobj.id = 4;
+    this.goodsobj.img = "../../static/logo.png";
+    this.goodsobj.desc = "医药";
+
+    // this.goodsobj.isSelected= true;
+    this.goodsobj.price = 14;
+    // this.goodsobj.buyCount=1;
     console.log(this.goodsobj);
   },
   mounted: function mounted() {}

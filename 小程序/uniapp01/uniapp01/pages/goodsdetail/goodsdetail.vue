@@ -20,12 +20,13 @@
 				<image src="../../static/images/yi.png" mode=""></image>
 			</view>
 			<view class="btn">立即购买</view>
-			<view class="btn cart">加入购物车</view>
+			<view class="btn cart" @click="addCart">加入购物车</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {mapMutations}  from 'vuex'
 	export default {
 		data() {
 			return {
@@ -33,11 +34,24 @@
 			};
 		},
 		methods:{
-			
+			...mapMutations( 'cart',['addGoodsMutations']),
+			addCart(){
+				console.log("add .... ")
+				this.addGoodsMutations(this.goodsobj)
+				
+			}
 		},
 		onLoad(options) {
 			console.log(options.goods);
 			this.goodsobj =JSON.parse(options.goods) ;
+			
+			this.goodsobj.id= 4;
+			this.goodsobj.img= "../../static/logo.png";
+			this.goodsobj.desc= "医药";
+			
+			// this.goodsobj.isSelected= true;
+			this.goodsobj.price= 14;
+			// this.goodsobj.buyCount=1;
 			console.log(this.goodsobj);
 			
 		},

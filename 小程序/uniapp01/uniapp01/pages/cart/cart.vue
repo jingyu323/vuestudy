@@ -1,25 +1,25 @@
 <template>
 	<view class="cart">
 		<view class="cartList">
-			<view class="cartItem" v-for=" i in 3">
-				<text class="iconfont icon-xuanzhong"> </text>
+			<view class="cartItem" v-for=" (item,index) in cartList" :key="item.id">
+				<text class="iconfont icon-xuanzhong" :class="{selected:item.isSelected == true}" @click="changeSelect(item.isSelected,index)" > </text>
 				<view  class="goodsitem">
-					<image src="../../static/logo.png"></image>
+					<image :src="item.img"></image>
 					<view class="goodsinfo">
-						<view class="name">羊毛衫</view>
-						<view class="price">￥ 9000</view>
+						<view class="name">{{item.desc}}</view>
+						<view class="price">￥{{item.price}}</view>
 					</view>
 				</view>
 				<view class="numctl">
-					<text class="sub">-</text>
-					<text class="num" >99</text>
-					<text class="add">+</text>
+					<text class="sub" @click="changeCount(false,index)">-</text>
+					<text class="num" >{{item.buyCount}}</text>
+					<text class="add"  @click="changeCount(true ,index)" >+</text>
 				</view>
 			</view>
 			
 		</view>
 		 <view class="footer">
-			 <text class="iconfont icon-xuanzhong">已选择2 </text>
+			 <text class="iconfont icon-xuanzhong" :class="{selected:isAllSelected== true}" @click="changeAllSelected()" >已选择2 </text>
 			 <view class="right">
 				 <view class="btn">合计:￥999 </view>
 				 <view class="btn order">下单</view>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+	
+	import {mapState,mapMutations,mapGetters} from 'vuex' 
 	export default {
 		data() {
 			return {
@@ -36,7 +38,28 @@
 			}
 		},
 		methods: {
+			...mapMutations('cart',['changeCountMutations','changeSelectedMutations','changeAllSelectedMutations']),
+			changeCount(isAdd,index){
+					console.log(index+ " ss  " + isAdd )
+				this.changeCountMutations({isAdd,index})
+			},
+			changeSelect(isSelected,index){
+				this.changeSelectedMutations({isSelected,index})
+				console.log(index+ " changeSelect  " + isSelected )
+			},
+			changeAllSelected(){
+				this.changeAllSelectedMutations(this.isAllSelected)
+			}
+		},
+		mounted() {
+			console.log("ss   s " +this.cartList)
 			
+		},
+		computed:{
+			...mapState({
+					cartList:state => state.cart.cartList
+			}),
+			...mapGetters("cart",['isAllSelected']),
 		}
 	}
 </script>
@@ -79,6 +102,9 @@
 				 font-size: 40rpx;
 				 line-height: 200rpx;
 				 margin: 10rpx 30rpx;
+				 &.selected{
+					 	color:#dd1a21;
+				 }
 			 }
 			 .numctl{
 				 position: absolute;
@@ -107,7 +133,14 @@
 		 left: 0;
 		 bottom: 0;
 		 right: 0;
-		
+		.iconfont{
+					 font-size: 40rpx;
+					 line-height: 200rpx;
+					 margin: 10rpx 30rpx;
+					 &.selected{
+							color:#dd1a21;
+					 }
+	}
 		 .right{
 			 flex: 1;
 			 right: 0;
