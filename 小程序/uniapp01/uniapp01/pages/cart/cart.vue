@@ -103,6 +103,7 @@
 		 height: 120rpx;
 		 display: flex;
 		 position: fixed;
+		 line-height: 80rpx;
 		 left: 0;
 		 bottom: 0;
 		 right: 0;
