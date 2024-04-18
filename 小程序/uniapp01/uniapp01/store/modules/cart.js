@@ -67,7 +67,24 @@ const getters = {
 		 
 		console.log(state.cartList.every(item=>item.isSelected))
 		return state.cartList.every(item=>item.isSelected)
-	}
+	},
+	totalCount(state){
+		return state.cartList.reduce((pre,item)=>{
+			// if(!item.isSelected){
+			// 	return pre += 0;
+			// }
+			return pre += item.isSelected? item.buyCount:0;
+		},0);
+	},
+	
+	totalPrice(state){
+		return state.cartList.reduce((pre,item)=>{
+			// if(!item.isSelected){
+			// 	return pre += 0;
+			// }
+			return pre += item.isSelected? item.price * item.buyCount:0;
+		},0);
+	},
 	
 }
 

@@ -176,7 +176,7 @@ var _default = {
     cartList: function cartList(state) {
       return state.cart.cartList;
     }
-  })), (0, _vuex.mapGetters)("cart", ['isAllSelected']))
+  })), (0, _vuex.mapGetters)("cart", ['isAllSelected', 'totalCount', 'totalPrice']))
 };
 exports.default = _default;
 

@@ -11515,6 +11515,22 @@ var getters = {
     return state.cartList.every(function (item) {
       return item.isSelected;
     });
+  },
+  totalCount: function totalCount(state) {
+    return state.cartList.reduce(function (pre, item) {
+      // if(!item.isSelected){
+      // 	return pre += 0;
+      // }
+      return pre += item.isSelected ? item.buyCount : 0;
+    }, 0);
+  },
+  totalPrice: function totalPrice(state) {
+    return state.cartList.reduce(function (pre, item) {
+      // if(!item.isSelected){
+      // 	return pre += 0;
+      // }
+      return pre += item.isSelected ? item.price * item.buyCount : 0;
+    }, 0);
   }
 };
 var _default = {

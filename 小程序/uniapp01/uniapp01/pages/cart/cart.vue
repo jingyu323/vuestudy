@@ -19,9 +19,9 @@
 			
 		</view>
 		 <view class="footer">
-			 <text class="iconfont icon-xuanzhong" :class="{selected:isAllSelected== true}" @click="changeAllSelected()" >已选择2 </text>
+			 <text class="iconfont icon-xuanzhong" :class="{selected:isAllSelected== true}" @click="changeAllSelected()" >已选择{{totalCount}} </text>
 			 <view class="right">
-				 <view class="btn">合计:￥999 </view>
+				 <view class="btn">合计:￥{{totalPrice}} </view>
 				 <view class="btn order">下单</view>
 			 </view>
 		 </view>
@@ -59,7 +59,7 @@
 			...mapState({
 					cartList:state => state.cart.cartList
 			}),
-			...mapGetters("cart",['isAllSelected']),
+			...mapGetters("cart",['isAllSelected','totalCount','totalPrice']),
 		}
 	}
 </script>
