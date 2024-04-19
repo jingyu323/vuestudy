@@ -36,10 +36,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # <!-- echarts -->
 npm install echarts --save
 
-vue5+ 
+vue5+
 import * as echarts from 'echarts';
 
-vue4 
+vue4
 import   echarts from 'echarts';
 示例
 https://blog.csdn.net/weixin_55181759/category_11824935.html
@@ -82,12 +82,12 @@ import {AREANAME} from "@/data/areaName.js";
 var webpack = require('webpack')
 (2)然后在module.exports中添加一段代码，
 
- plugins: [ 
+ plugins: [
     new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.ProvidePlugin({
       jQuery: "jquery",
-      $: "jquery" 
-    }) 
+      $: "jquery"
+    })
   ]
 
 3.在main.js里导入jQuery
@@ -105,7 +105,7 @@ npm run dev
 	  // 添加
 	  jquery: true
 	}
-然后启动项目即可。 
+然后启动项目即可。
 
 # vue 引入 easyUI
 官网
@@ -144,3 +144,5 @@ https://www.cnblogs.com/CIBud/p/14963219.html
 
 
   npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+  放大之后不改变布局
+   transform: scale(2.2);

@@ -54,7 +54,9 @@
         <router-link to="/monthdata"> monthdata   </router-link>
         <router-link to="/edittable2"> edittable2   </router-link>
         <router-link to="/edittable2"> edittable3   </router-link>
-        <router-link to="/avatartest"> avatartest   </router-link>
+        <router-link to="/avatartest"> avatartest   </router-link><br>
+        <router-link to="/lrcshow"> lrcshow   </router-link>
+
 
 
       </li>

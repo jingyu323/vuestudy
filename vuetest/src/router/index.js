@@ -20,10 +20,19 @@ import monthdata from '@/components/monthdata'
 import edittable3 from '@/components/edittable3'
 import avatartest from '@/components/avatartest'
 
+import lrcshow from '@/components/lrcshow'
+
+
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/lrcshow',
+      name: 'lrcshow',
+      component: lrcshow
+    },
     {
       path: '/',
       name: 'HelloWorld',
