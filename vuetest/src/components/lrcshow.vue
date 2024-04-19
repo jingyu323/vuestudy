@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <button @click = "goback()">返回</button> <br>
     <audio   controls="controls"    type="audio/mpeg" preload="meta" >
       <source src="../assets/song/nanniandejing.mp3" />
     </audio>
@@ -275,7 +276,10 @@
           var duration = audio.currentTime;
           _this.setOffset(lineHeight,containerHeight,maxoffset,duration)
         });
-      }
+      },
+        goback: function () {
+          window.history.back()
+        },
 
 
 
@@ -283,7 +287,7 @@
   }
 </script>
 
-<style   >
+<style  >
 
 *{
   margin: 0;

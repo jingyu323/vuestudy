@@ -21,6 +21,7 @@ import edittable3 from '@/components/edittable3'
 import avatartest from '@/components/avatartest'
 
 import lrcshow from '@/components/lrcshow'
+import house from '@/components/house'
 
 
 
@@ -32,6 +33,10 @@ export default new Router({
       path: '/lrcshow',
       name: 'lrcshow',
       component: lrcshow
+    },    {
+      path: '/house',
+      name: 'house',
+      component: house
     },
     {
       path: '/',

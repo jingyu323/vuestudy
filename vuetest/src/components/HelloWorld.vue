@@ -59,6 +59,10 @@
 
 
 
+
+      </li>
+      <li>
+        <router-link to="/house"> house   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>
