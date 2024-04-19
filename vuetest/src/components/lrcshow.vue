@@ -78,6 +78,60 @@
 [04:04.46]这沙滚滚水皱皱笑着浪荡
 [04:07.08]贪欢一刻偏教那女儿情长埋葬
 [04:12.69]`,
+        lrc2:`难念的经 Lyrics[00:20]
+难念的经 - 周华健[00:27]
+笑你我枉花光心计[00:30]
+爱竞逐镜花那美丽[00:33]
+怕幸运会转眼远逝[00:37]
+为贪嗔喜恶怒着迷[00:40]
+责你我太贪功恋势[00:44]
+怪大地众生太美丽[00:47]
+悔旧日太执信约誓[00:50]
+为悲欢哀怨妒着迷[00:54]
+啊 舍不得璀灿俗世[01:00]
+啊 找不到痴恋的欣慰[01:07]
+啊 找不到色相代替[01:14]
+啊 参一生参不透这条难题[01:20]
+吞风吻雨葬落日未曾彷徨[01:24]
+欺山赶海践雪径也未绝望[01:27]
+拈花把酒偏折煞世人情狂[01:31]
+凭这两眼与百臂或千手不能防[01:34]
+天阔阔雪漫漫共谁同航[01:37]
+这沙滚滚水皱皱笑着浪荡[01:40]
+贪欢一刻偏教那女儿情长埋葬[01:47]
+吞风吻雨葬落日未曾彷徨[01:51]
+欺山赶海践雪径也未绝望[01:54]
+拈花把酒偏折煞世人情狂[01:57]
+凭这两眼与百臂或千手不能防[02:01]
+天阔阔雪漫漫共谁同航[02:04]
+这沙滚滚水皱皱笑着浪荡[02:08]
+贪欢一刻偏教那女儿情长埋葬[02:28]
+笑你我枉花光心计[02:32]
+爱竞逐镜花那美丽[02:34]
+怕幸运会转眼远逝[02:38]
+为贪嗔喜恶怒着迷[02:42]
+责你我太贪功恋势[02:45]
+怪大地众生太美丽[02:48]
+悔旧日太执信约誓[02:52]
+为悲欢哀怨妒着迷[02:55]
+啊 舍不得璀灿俗世[03:02]
+啊 躲不开痴恋的欣慰[03:09]
+啊 找不到色相代替[03:16]
+啊 参一生参不透这条难题[03:22]
+吞风吻雨葬落日未曾彷徨[03:26]
+欺山赶海践雪径也未绝望[03:29]
+拈花把酒偏折煞世人情狂[03:32]
+凭这两眼与百臂或千手不能防[03:36]
+天阔阔雪漫漫共谁同航[03:39]
+这沙滚滚水皱皱笑着浪荡[03:42]
+贪欢一刻偏教那女儿情长埋葬[03:49]
+吞风吻雨葬落日未曾彷徨[03:52]
+欺山赶海践雪径也未绝望[03:56]
+拈花把酒偏折煞世人情狂[03:59]
+凭这两眼与百臂或千手不能防[04:03]
+天阔阔雪漫漫共谁同航[04:06]
+这沙滚滚水皱皱笑着浪荡[04:09]
+贪欢一刻偏教那女儿情长埋葬[04:19]`
 
 
       }
@@ -91,6 +145,24 @@
        // document.write(this.lrcDara1)
     },
     methods: {
+      parseLrcNew(){
+        let  result = [];
+        let lines = this.lrc2.split("\n");
+        let _this = this
+        lines.forEach(line =>{
+          let strs = line.split("[")
+          let timepart = strs[1].substring(0,strs[1].length-1)
+          // console.log(timepart)
+          let lrcObj = {
+            time: this.parseTime(timepart) ,
+            words:strs[0]
+          }
+
+
+          result.push(lrcObj)
+        })
+        return result;
+      },
       parseLrc(){
         let  result = [];
          let lines = this.lrcDara.split("\n");
@@ -138,10 +210,13 @@
       },
       findIndex(time){
          // let time= document.querySelector('audio').currentTime
-          let  lrcData = this.parseLrc();
+          let  lrcData = this.parseLrcNew();
           for(var i=0;i<lrcData.length;i++){
             if(time < lrcData[i].time){
-              return i - 1;
+              // if(i-1 < 0){
+              //   return  0
+              // }
+              return i ;
             }
           }
 
@@ -149,7 +224,7 @@
       },
       createLrcElement(){
          let ul= document.querySelector('ul')
-         let  lrcData = this.parseLrc();
+         let  lrcData = this.parseLrcNew();
          let frag = document.createDocumentFragment();
          for(var i=0;i<lrcData.length;i++){
             let li = document.createElement('li')
