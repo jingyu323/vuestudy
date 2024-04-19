@@ -98,11 +98,22 @@
             let strs = line.split("]")
             let timepart = strs[0].substring(1)
             if(strs[1]==""){
-              let lrcObj = {
-                time: 0 ,
-                words:timepart
+              var tps = timepart.split(":")
+              if(  parseInt(tps[0])  || parseInt(tps[1]) ){
+                let lrcObj = {
+                  time: this.parseTime(timepart)  ,
+                  words:''
+                }
+                result.push(lrcObj)
+              }else{
+                let lrcObj = {
+                  time: 0 ,
+                  words:timepart
+                }
+                result.push(lrcObj)
               }
-              result.push(lrcObj)
+
+
             }else{
              let lrcObj = {
                time: this.parseTime(timepart) ,
@@ -125,8 +136,8 @@
         return +parts[0]*60 + +parts[1]
 
       },
-      findIndex(){
-         let time= document.querySelector('audio').currentTime
+      findIndex(time){
+         // let time= document.querySelector('audio').currentTime
           let  lrcData = this.parseLrc();
           for(var i=0;i<lrcData.length;i++){
             if(time < lrcData[i].time){
@@ -146,18 +157,32 @@
             frag.appendChild(li)
          }
          ul.appendChild(frag)
+        let li = ul.children[0];
+        if(li){
+          li.classList.add("active")
+        }
 
       },
-      setOffset(lineHeight,containerHeight,maxoffset){
-        let index = this.findIndex();
-        var offset = lineHeight * index + lineHeight/2 + containerHeight/arguments;
+      setOffset(lineHeight,containerHeight,maxoffset,time){
+        let index = this.findIndex(time);
+        console.log(index)
+        var offset = lineHeight * index - 130;
         if(offset < 0){
           offset = 0;
         }
         if(offset > maxoffset){
            offset = maxoffset ;
         }
-         var uls= document.querySelector('ul')
+         var uls= document.querySelector('ul');
+        uls.style.transform = "translateY(-" + offset + "px)";
+        var li = document.querySelector('.active')
+        if(li){
+          li.classList.remove("active")
+        }
+        let li2 = uls.children[index];
+        if(li2){
+          li2.classList.add("active")
+        }
 
 
       },
@@ -167,10 +192,14 @@
         let container= document.querySelector('.container')
         let containerHeight =container.clientHeight;
         let maxoffset = ul.clientHeight;
-        this.setOffset(lineHeight,containerHeight,maxoffset)
+        let _this= this;
 
 
-
+        var audio =  document.querySelector('audio');
+        audio.addEventListener('timeupdate', function() {
+          var duration = audio.currentTime;
+          _this.setOffset(lineHeight,containerHeight,maxoffset,duration)
+        });
       }
 
 
