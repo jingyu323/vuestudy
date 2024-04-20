@@ -50,19 +50,17 @@
         <router-link to="/echartRailwayMap"> echartRailwayMap   </router-link>
         <router-link to="/echartRailwayLineMap"> echartRailwayLineMap   </router-link>
         <router-link to="/echartNetMap"> echartNetMap   </router-link>
-          <router-link to="/edittable"> edittable   </router-link>
+        <router-link to="/edittable"> edittable   </router-link>
         <router-link to="/monthdata"> monthdata   </router-link>
         <router-link to="/edittable2"> edittable2   </router-link>
         <router-link to="/edittable2"> edittable3   </router-link>
         <router-link to="/avatartest"> avatartest   </router-link>
         <router-link to="/lrcshow"> lrcshow   </router-link>
-
-
-
-
       </li>
       <li>
         <router-link to="/house"> house   </router-link>
+        <router-link to="/ninesquare"> ninesquare   </router-link>
+        <router-link to="/ninesquare2"> ninesquare   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>

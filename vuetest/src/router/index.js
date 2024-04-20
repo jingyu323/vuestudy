@@ -22,6 +22,8 @@ import avatartest from '@/components/avatartest'
 
 import lrcshow from '@/components/lrcshow'
 import house from '@/components/house'
+import ninesquare from '@/components/special/ninesquare'
+import ninesquare2 from '@/components/special/ninesquare2'
 
 
 
@@ -30,10 +32,21 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/ninesquare2',
+      name: 'ninesquare2',
+      component: ninesquare2
+    },
+    {
+      path: '/ninesquare',
+      name: 'ninesquare',
+      component: ninesquare
+    },
+    {
       path: '/lrcshow',
       name: 'lrcshow',
       component: lrcshow
-    },    {
+    },
+    {
       path: '/house',
       name: 'house',
       component: house

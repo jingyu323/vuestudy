@@ -146,3 +146,13 @@ https://www.cnblogs.com/CIBud/p/14963219.html
   npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
   放大之后不改变布局
    transform: scale(2.2);
+
+1.<p>标签
+  text-align: center; 水平居中
+2.<div>标签
+  display: flex; 前提必须是flex布局
+  justify-content: center；水平居中
+  align-items: center;垂直居中
+
+child 选择方式
+.inner:nth-child(1) { transform: rotateY(   0deg );background-color: #ccffff; }
