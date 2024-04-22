@@ -24,6 +24,8 @@ import lrcshow from '@/components/lrcshow'
 import house from '@/components/house'
 import ninesquare from '@/components/special/ninesquare'
 import ninesquare2 from '@/components/special/ninesquare2'
+import animation from '@/components/animation/animation'
+import rotation from '@/components/animation/rotation'
 
 
 
@@ -31,6 +33,16 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/rotation',
+      name: 'rotation',
+      component: rotation
+    },
+    {
+      path: '/animation',
+      name: 'animation',
+      component: animation
+    },
     {
       path: '/ninesquare2',
       name: 'ninesquare2',

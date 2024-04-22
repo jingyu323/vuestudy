@@ -61,6 +61,8 @@
         <router-link to="/house"> house   </router-link>
         <router-link to="/ninesquare"> ninesquare   </router-link>
         <router-link to="/ninesquare2"> ninesquare   </router-link>
+        <router-link to="/animation"> animation   </router-link>
+        <router-link to="/rotation"> rotation   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>
