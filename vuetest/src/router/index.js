@@ -22,6 +22,9 @@ import avatartest from '@/components/avatartest'
 
 import lrcshow from '@/components/lrcshow'
 import house from '@/components/house'
+import animation from '@/components/animationtest/animation'
+
+
 
 
 
@@ -30,10 +33,16 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/animation',
+      name: 'animation',
+      component: animation
+    },
+    {
       path: '/lrcshow',
       name: 'lrcshow',
       component: lrcshow
-    },    {
+    },
+    {
       path: '/house',
       name: 'house',
       component: house

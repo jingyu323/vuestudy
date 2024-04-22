@@ -54,15 +54,12 @@
         <router-link to="/monthdata"> monthdata   </router-link>
         <router-link to="/edittable2"> edittable2   </router-link>
         <router-link to="/edittable2"> edittable3   </router-link>
-        <router-link to="/avatartest"> avatartest   </router-link><br>
+        <router-link to="/avatartest"> avatartest   </router-link>
         <router-link to="/lrcshow"> lrcshow   </router-link>
-
-
-
-
       </li>
       <li>
         <router-link to="/house"> house   </router-link>
+        <router-link to="/animation"> animation   </router-link>
       </li>
     </ul>
     <h2>Ecosystem</h2>
@@ -155,7 +152,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
 }
 a {
