@@ -22,10 +22,16 @@ import avatartest from '@/components/avatartest'
 
 import lrcshow from '@/components/lrcshow'
 import house from '@/components/house'
+
 import ninesquare from '@/components/special/ninesquare'
 import ninesquare2 from '@/components/special/ninesquare2'
 import animation from '@/components/animation/animation'
 import rotation from '@/components/animation/rotation'
+
+import animationtest from '@/components/animationtest/animation'
+
+
+
 
 
 
@@ -42,6 +48,11 @@ export default new Router({
       path: '/animation',
       name: 'animation',
       component: animation
+    },
+    {
+      path: '/animationtest',
+      name: 'animationtest',
+      component: animationtest
     },
     {
       path: '/ninesquare2',

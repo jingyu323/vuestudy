@@ -63,6 +63,8 @@
         <router-link to="/ninesquare2"> ninesquare   </router-link>
         <router-link to="/animation"> animation   </router-link>
         <router-link to="/rotation"> rotation   </router-link>
+        <router-link to="/animation"> animation   </router-link>
+
       </li>
     </ul>
     <h2>Ecosystem</h2>
@@ -155,7 +157,7 @@ ul {
   padding: 0;
 }
 li {
-  /*display: inline-block;*/
+  display: block;
   margin: 0 10px;
 }
 a {
