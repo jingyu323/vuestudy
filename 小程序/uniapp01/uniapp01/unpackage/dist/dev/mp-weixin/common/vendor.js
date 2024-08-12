@@ -775,13 +775,13 @@ function populateParameters(result) {
   // wx.getAccountInfoSync
 
   var parameters = {
-    appId: "",
+    appId: "__UNI__86D19E3",
     appName: "uniapp01",
     appVersion: "1.0.0",
-    appVersionCode: "100",
+    appVersionCode: "1",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "4.08",
-    uniRuntimeVersion: "4.08",
+    uniCompileVersion: "4.24",
+    uniRuntimeVersion: "4.24",
     uniPlatform: undefined || "mp-weixin",
     deviceBrand: deviceBrand,
     deviceModel: model,
@@ -874,10 +874,10 @@ var getAppBaseInfo = {
     var _hostName = getHostName(result);
     var hostLanguage = language.replace('_', '-');
     result = sortObject(Object.assign(result, {
-      appId: "",
+      appId: "__UNI__86D19E3",
       appName: "uniapp01",
       appVersion: "1.0.0",
-      appVersionCode: "100",
+      appVersionCode: "1",
       appLanguage: getAppLanguage(hostLanguage),
       hostVersion: version,
       hostLanguage: hostLanguage,
@@ -2649,7 +2649,7 @@ var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
 var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ 14);
 function toPropertyKey(t) {
   var i = toPrimitive(t, "string");
-  return "symbol" == _typeof(i) ? i : String(i);
+  return "symbol" == _typeof(i) ? i : i + "";
 }
 module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -9466,9 +9466,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 26 */
-/*!****************************************************************!*\
-  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/pages.json ***!
-  \****************************************************************/
+/*!**************************************************************!*\
+  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/pages.json ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9612,9 +9612,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 33 */
-/*!******************************************************************************!*\
-  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/uni.promisify.adaptor.js ***!
-  \******************************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/uni.promisify.adaptor.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9635,9 +9635,9 @@ uni.addInterceptor({
 
 /***/ }),
 /* 34 */
-/*!********************************************************************!*\
-  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/store/index.js ***!
-  \********************************************************************/
+/*!******************************************************************!*\
+  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/store/index.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10919,9 +10919,9 @@ module.exports = index_cjs;
 
 /***/ }),
 /* 36 */
-/*!***************************************************************************!*\
-  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/store/modules/cart.js ***!
-  \***************************************************************************/
+/*!*************************************************************************!*\
+  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/store/modules/cart.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11208,7 +11208,7 @@ function _regeneratorRuntime() {
   function makeInvokeMethod(e, r, n) {
     var o = h;
     return function (i, a) {
-      if (o === f) throw new Error("Generator is already running");
+      if (o === f) throw Error("Generator is already running");
       if (o === s) {
         if ("throw" === i) throw a;
         return {
@@ -11356,7 +11356,7 @@ function _regeneratorRuntime() {
           } else if (c) {
             if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
           } else {
-            if (!u) throw new Error("try statement without catch or finally");
+            if (!u) throw Error("try statement without catch or finally");
             if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
           }
         }
@@ -11396,7 +11396,7 @@ function _regeneratorRuntime() {
           return o;
         }
       }
-      throw new Error("illegal catch attempt");
+      throw Error("illegal catch attempt");
     },
     delegateYield: function delegateYield(e, r, n) {
       return this.delegate = {
@@ -11451,9 +11451,9 @@ module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exp
 
 /***/ }),
 /* 70 */
-/*!**********************************************************************!*\
-  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/utils/request.js ***!
-  \**********************************************************************/
+/*!********************************************************************!*\
+  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/utils/request.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11489,9 +11489,9 @@ exports.default = _default;
 
 /***/ }),
 /* 71 */
-/*!*******************************************************************!*\
-  !*** E:/git_project/vuestudy/小程序/uniapp01/uniapp01/utils/base.js ***!
-  \*******************************************************************/
+/*!*****************************************************************!*\
+  !*** E:/study/git/vuestudy/小程序/uniapp01/uniapp01/utils/base.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

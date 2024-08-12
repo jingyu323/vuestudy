@@ -95,9 +95,15 @@
 		methods: {
 			
 		 async	getindexdata(){
-				const data =  await request('/indexnav')
-				console.log(data)
-				this.indexnavdata = data.navgation;
+				 
+				
+				
+				
+				
+				this.indexnavdata ={
+				 "navgation":["推荐1","推荐2","推荐3","推荐4","推荐5","推荐6","推荐7","美食酒水","个清护理","推荐10","推荐11","推荐12"]
+				};
+				console.log(this.indexnavdata)
 			},
 			changeindex(index){
 				console.log("index="+index)

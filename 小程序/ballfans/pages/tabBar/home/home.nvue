@@ -1,0 +1,195 @@
+<template>
+	<view class="uni-container">
+		<view class="uni-margin-wrap">
+			<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
+				<swiper-item>
+					<view class="swiper-item uni-bg-red">A</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="swiper-item uni-bg-green">B</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="swiper-item uni-bg-blue">C1</view>
+				</swiper-item>
+			</swiper>
+		</view>
+		 
+		<view class="ballinfolist">
+			<view class="ballinfoitem" v-for="item  in ballinfolist"  :key="item.desc"><image :src="item.img"><text>{{item.desc}}</text></view>
+		</view>
+		<view class="advertise_posi">
+			<image  class="ad_pos_img" src="../../../static/image/mesi.jpg"></image>
+		</view>
+		 
+		 
+	</view>
+</template>
+<script>
+	// TODO 修复Android v3 加载过慢问题
+	// #ifdef APP-PLUS
+	var domModule = weex.requireModule('dom');
+	domModule.addRule('fontFace', {
+		'fontFamily': "uniicons",
+		'src': "url('/static/uni.ttf')"
+	});
+	// #endif
+	export default {
+		props: {
+			hasLeftWin: {
+				type: Boolean
+			},
+			leftWinActive: {
+				type: String
+			}
+		},
+		data() {
+			return {
+				 
+				indicatorDots: true,
+				autoplay: true,
+				interval: 2000,
+				duration: 500,
+				ballinfolist:[{"img":"https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png","desc":"球队赛事"},
+				{"img":"https://yanxuan.nosdn.127.net/fede8b110c502ec5799702d5ec824792.png","desc":"球员信息"},
+				{"img":"https://yanxuan.nosdn.127.net/896a3beac514ae8f40aafe028e5fec56.png","desc":"协会信息"},
+				{"img":"https://yanxuan.nosdn.127.net/37520d1204a0c55474021b43dac2a69e.png","desc":"协会风采"},],
+				
+			}
+		},
+		onShareAppMessage() {
+			return {
+				title: '欢迎体验uni-app',
+				path: '/pages/tabBar/component/component'
+			}
+		},
+		onNavigationBarButtonTap(e) {
+			uni.navigateTo({
+				url: '/pages/about/about'
+			});
+		},
+		// #ifdef H5
+		watch: {
+			$route: {
+				immediate: true,
+				handler(newRoute) {
+					if (newRoute.matched.length) {
+						let path = newRoute.path.split('/')[3]
+						for (const item of this.list) {
+							if (Array.isArray(item.pages)) {
+								for (const page of item.pages) {
+									if (page === path || page.url && page.url === newRoute.path) {
+										item.open = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		// #endif
+		methods: {
+			triggerCollapse(e, id) {
+				if (!this.list[e].pages) {
+					this.goDetailPage('', this.list[e].url);
+					return;
+				}
+				for (var i = 0; i < this.list.length; ++i) {
+					if (e === i) {
+						this.list[i].open = !this.list[i].open;
+					} else {
+						this.list[i].open = false;
+					}
+				}
+			},
+			goDetailPage(panel, e) {
+				if (typeof e === 'string') {
+					const url = '/pages/component/' + e + '/' + e
+					if (this.hasLeftWin) {
+						uni.reLaunch({
+							url: url
+						})
+					} else {
+						uni.navigateTo({
+							url: url
+						})
+					}
+				} else {
+					if (this.hasLeftWin) {
+						uni.reLaunch({
+							url: e.url
+						})
+					} else {
+						uni.navigateTo({
+							url: e.url
+						})
+					}
+				}
+			}
+		}
+	}
+</script>
+
+<style>
+	@import '../../../common/uni-nvue.css';
+	.uni-margin-wrap {
+		width:690rpx;
+		width: 100%;;
+	}
+	.advertise_posi{
+		height: 400rpx;
+		width: 100%;
+		image{
+			width: 100%;
+		}
+	}
+	.swiper {
+		height: 300rpx;
+	}
+	.swiper-item {
+		display: block;
+		height: 300rpx;
+		line-height: 300rpx;
+		text-align: center;
+	}
+	
+	.swiper-list {
+		margin-top: 40rpx;
+		margin-bottom: 0;
+	}
+	
+	.uni-common-mt{
+		margin-top:60rpx;
+		position:relative;
+	}
+	
+	.info {
+		position: absolute;
+		right:20rpx;
+	}
+	
+	.uni-padding-wrap {
+	    width:550rpx;
+	    padding:0 100rpx;
+	}
+	
+	.ballinfolist{
+		display: -webkit-flex; /* Chrome, Safari */
+		display: flex;
+		-webkit-flex-wrap: wrap; /* Chrome, Safari */
+		
+		margin: 15rpx 0 ;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+	.ballinfolist .ballinfoitem{
+		width: 25%;
+		font-size: 26rpx;
+		text-align: center;
+		margin: 15rpx 0 ;
+	}
+	 .ballinfoitem image{
+		 height: 160rpx;
+		 width: 160rpx;
+	}
+</style>
