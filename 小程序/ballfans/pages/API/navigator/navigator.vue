@@ -60,8 +60,10 @@
 			reLaunch() {
 				if (this.hasLeftWin) {
 					uni.reLaunch({
+						
 						url: '/pages/component/view/view'
 					});
+					console.log("1....")
 					return;
 				}
 				uni.reLaunch({
@@ -76,6 +78,7 @@
 				})
 			},
 			preloadPage(){
+				console.log("preloadPage。。。");
 				uni.preloadPage({
 					url: preloadPageUrl,
 					success(){

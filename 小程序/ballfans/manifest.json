@@ -23,7 +23,8 @@
             "Push" : {},
             "Share" : {},
             "Speech" : {},
-            "VideoPlayer" : {}
+            "VideoPlayer" : {},
+            "Maps" : {}
         },
         "distribute" : {
             "android" : {
@@ -70,6 +71,23 @@
             "sdkConfigs" : {
                 "speech" : {
                     "ifly" : {}
+                },
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    },
+                    "weixin" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appid" : "",
+                        "UniversalLinks" : ""
+                    }
+                },
+                "maps" : {
+                    "amap" : {
+                        "name" : "",
+                        "appkey_ios" : "",
+                        "appkey_android" : ""
+                    }
                 }
             },
             "orientation" : [ "portrait-primary" ]

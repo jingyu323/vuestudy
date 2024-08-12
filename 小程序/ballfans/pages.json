@@ -1,10 +1,4 @@
 {
-	"leftWindow": {
-		"path": "windows/left-window.vue",
-		"style": {
-			"width": "350px"
-		}
-	},
 	"topWindow": {
 		"path": "windows/top-window.vue",
 		"style": {
@@ -16,7 +10,7 @@
 		{
 			"path": "pages/tabBar/home/home",
 			"style": {
-				"navigationBarTitleText": "首页22","navigationBarBackgroundColor": "#BB2C08",
+				"navigationBarTitleText": "首页","navigationBarBackgroundColor": "#BB2C08",
 				
 				"app-plus": {
 					"bounce": "vertical",
